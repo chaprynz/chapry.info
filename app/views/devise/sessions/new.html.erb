@@ -1,0 +1,29 @@
+
+<div style="color:white;background:rgba(20, 20, 20, 0.8);max-width:360px;margin-top:100px" class="w3-padding-large w3-modal-content">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2>Đăng Nhập</h2>
+  <div class="form-field">
+    
+    <%= f.email_field :email, class: "w3-input  ", :placeholder => "Email" %>
+  </div>
+
+  <div class="form-field">
+    
+    <%= f.password_field :password, class: "w3-input  ", :placeholder => "Mật khẩu" %>
+  </div><br>
+
+  <div class="actions">
+    <%= f.submit "Đăng Nhập",  class: " w3-input w3-blue w3-hover-green" %>
+  </div><br>
+  <div class="actions">
+    ĐĂNG NHẬP VỚI&nbsp; &nbsp; 
+    <a  href="#"><i style="color:#49659F;font-size:30px" class="fa fa-facebook-official" aria-hidden="true"></i></a>&nbsp; &nbsp;
+    <a  href="#"><i style="color:red;font-size:30px" class="fa Example of google-plus fa-google-plus" aria-hidden="true"></i></a>
+  </div><br>
+  
+  
+  <div><%= link_to "Đăng ký", new_registration_path(resource_name),  class: "w3-input w3-hover-green w3-blue" %></div><br>
+  <div><%= link_to "Trở Lại Trang Chủ",root_path,  class: "w3-input w3-hover-green w3-blue" %></div><br>
+<% end %>
+
+</div>

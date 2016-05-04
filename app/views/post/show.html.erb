@@ -1,0 +1,59 @@
+<% content_for :head do %>
+	<title><%= @post.title %> | Code4Pro</title>
+	<!-- Open Graph data -->
+	<meta property="og:site_name" content="chapry">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="<%= @post.title %>">
+	<meta property="og:description" content="<%= @post.content %>">
+	<meta property="og:image" content="<%= @post.image %>">
+<% end %>
+<%= render partial: "shared/header" %>
+<div style="margin-top:42px" class="w3-main">
+	<div  class="w3-container ">
+		
+		<div class=" w3-col l8 w3-white m8 s12">
+			<div class="w3-container  w3-padding">
+				<div class=" embed-container">
+					<%= raw @post.video %>
+				</div>
+			</div>
+			<div class="w3-padding fb-like" data-width="200" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			<div class="w3-container  w3-padding">
+				<div  class="alink ">
+					<%= raw @post.content %>
+					
+				</div>
+				
+			</div>
+			<div  class="w3-white w3-container">
+				<div class="w3-padding fb-like" data-width="200" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+				<div  class="fb-comments" data-width="100%" data-href="" data-numposts="5"></div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		<%= render partial: "shared/postsidebar" %>
+	</div>
+</div>
+<div id="fb-root"></div>
+<%= render partial: "shared/footer" %>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=157760634616271";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+for (var i = 0; i < document.links.length; i++) {
+    if (document.links[i].href == document.URL) {
+        document.links[i].className = 'active';
+    }
+}
+</script>

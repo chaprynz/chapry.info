@@ -1,0 +1,52 @@
+<%= render partial: "shared/header" %>
+
+<div class="bodyimage w3-hide-small w3-display-container w3-animate-opacity">
+  
+  <%= image_tag "imagination.jpg", style: "width:100%;min-height:350px;max-height:600px;" %>
+  
+</div>
+<div class="w3-hide-small w3-main" >
+	<div  class="w3-container">
+		<div class=" w3-col l9 m9 s12">
+			<div style= class="w3-container  w3-white  w3-padding">
+				<% @categories.each do |category| %>	
+						<%= link_to category do %>
+							<div class="w3-padding  w3-col s6 l4 m6">
+								<div  class="w3-card-1 content ">
+									<%= image_tag category.image, style: "width:100%", class: "content-image" %>
+									<div class="content-overlay"></div>
+									<div class="content-details fadeIn-bottom">
+								        <h3 class="content-title"><%= category.name %></h3>
+								        <p class="content-text">This is a short description</p>
+							        </div>
+								</div>
+							</div>	
+						<% end %>	
+				<% end %>
+			</div>
+		</div>
+		<%= render partial: "shared/sidebar" %>
+	</div>
+</div>	
+
+<div style="margin-top:46px" class="w3-hide-large w3-hide-medium w3-main" >
+	<div  class="w3-container">
+		<div class=" w3-col l9 m9 s12">
+			<div style= class="w3-container w3-white  w3-padding">
+				<% @categories.each do |category| %>	
+						<%= link_to category do %>
+							<div class="w3-padding  w3-col s6 l4 m6">
+								<div  class="w3-card-1  w3-hover-shadow ">
+									<%= image_tag category.image, style: "width:100%" %>
+									
+								</div>
+							</div>	
+						<% end %>	
+				<% end %>
+			</div>
+		</div>
+		<%= render partial: "shared/sidebar" %>
+	</div>
+</div>	
+
+<%= render partial: "shared/footer" %>

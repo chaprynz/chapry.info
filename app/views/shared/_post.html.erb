@@ -1,0 +1,14 @@
+<% @posts.each do |post| %>	
+						<%= link_to [post.category, post] do %>
+							<div class="w3-row w3-margin">
+	        					<div class="w3-col s4">
+	        	  					<%= image_tag post.image, style: "width:100%" %>
+	        					</div>
+        					<div class="w3-padding w3-col s8 w3-container">
+        					  <h5><%= post.title %></h5>
+        					  <p><strong><span style="color: rgb(184, 49, 47);"><%= post.created_at.strftime("%d %m, %Y") %></span></strong></p>
+        					  
+        					</div>
+        				</div><hr>	
+						<% end %>
+				<% end %>
