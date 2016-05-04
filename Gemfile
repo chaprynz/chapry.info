@@ -25,10 +25,12 @@ gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
