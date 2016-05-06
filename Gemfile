@@ -21,6 +21,16 @@ gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 gem 'kaminari'
 
 gem "font-awesome-rails"
+gem 'friendly_id'
+gem 'toastr-rails'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+
+gem 'active_admin-sortable_tree', '~> 0.2.1'
+
 
 
 group :development, :test do

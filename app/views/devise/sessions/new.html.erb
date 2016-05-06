@@ -1,7 +1,8 @@
 
-<div style="color:white;background:rgba(20, 20, 20, 0.8);max-width:360px;margin-top:100px" class="w3-padding-large w3-modal-content">
+<div style="background:rgba(20, 20, 20, 0.8);max-width:360px;margin-top:100px" class="w3-padding-large w3-modal-content">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <h2>Đăng Nhập</h2>
+  <%= render partial: "shared/devisemes" %>
+  <h2 style="color:white">Đăng Nhập</h2>
   <div class="form-field">
     
     <%= f.email_field :email, class: "w3-input  ", :placeholder => "Email" %>
@@ -14,11 +15,13 @@
 
   <div class="actions">
     <%= f.submit "Đăng Nhập",  class: " w3-input w3-blue w3-hover-green" %>
-  </div><br>
+  </div>
   <div class="actions">
-    ĐĂNG NHẬP VỚI&nbsp; &nbsp; 
-    <a  href="#"><i style="color:#49659F;font-size:30px" class="fa fa-facebook-official" aria-hidden="true"></i></a>&nbsp; &nbsp;
-    <a  href="#"><i style="color:red;font-size:30px" class="fa Example of google-plus fa-google-plus" aria-hidden="true"></i></a>
+    <p style="color:white">ĐĂNG NHẬP VỚI</p>&nbsp; &nbsp; 
+    <%= link_to "facebook", user_omniauth_authorize_path(:facebook), class: "w3-btn w3-indigo w3-hover-green" %>
+    <%= link_to "google", user_omniauth_authorize_path(:google_oauth2), class: "w3-btn w3-red w3-hover-green" %>
+    
+    
   </div><br>
   
   

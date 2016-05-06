@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<div style="color:white;background:black;opacity:0.9" class="w3-top">
+<div style="color:white;background:black;" class="w3-top">
  <ul class="w3-navbar w3-theme-d2 w3-left-align w3-large">
   <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
     <a class="w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
@@ -8,17 +8,32 @@
   
   
   <% if(!user_signed_in?) %>
-    <li class="w3-hide-small w3-right"><%= link_to "Login", new_user_session_path, class: "w3-hover-green" %></li>
+    <li class="w3-hide-small w3-right"><%= link_to "Đăng Nhập", new_user_session_path, class: "w3-hover-green" %></li>
+      <% else%>
+        <div class="w3-right w3-hide-small w3-dropdown-click">
+          <button onclick="myFunction()" class=" w3-hover-green w3-btn"><%= image_tag avatar_url(current_user), style: "width:36px", class: "w3-small  w3-round" %>&nbsp; <%= current_user.name %> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+          <div style="color:white;background:black;opacity:0.9" id="Demo" class="w3-dropdown-content w3-card-4">
+            <%= link_to "Tài Khoản", edit_user_registration_path, class: "w3-hover-green" %>
+            <%= link_to "Thoát", destroy_user_session_path, method: :delete, class: "w3-hover-green" %>
+          </div>
+        </div>
   <% end %>
   
  </ul>
+ 
 </div>
 
 
 <!-- Navbar on small screens -->
-<div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:43px;">
-  <ul style="color:white;background:black;opacity:0.9" class="w3-navbar w3-left-align w3-large w3-theme">
-     <li class="w3-hide-large w3-hide-medium w3-right"><%= link_to "Đăng Nhập", new_user_session_path, class: "w3-hover-green" %></li>
+<div  id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="max-height:500px;position:fixed;overflow:scroll;z-index:99;margin-top:43px;">
+  <ul style="color:white;background:teal" class="w3-navbar w3-padding w3-left-align w3-large w3-theme">
+    <% if(!user_signed_in?) %>
+       <li><%= link_to "Đăng Nhập", new_user_session_path, class: "w3-hover-green" %></li>
+    <% else%>
+      <li><%= image_tag avatar_url(current_user), style: "width:20%", class: "w3-small  w3-round" %>&nbsp; <%= current_user.name %></li>  
+      <li><%= link_to "Tài Khoản", edit_user_registration_path, class: "w3-hover-green" %></i>
+      <li><%= link_to "Thoát", destroy_user_session_path, method: :delete, class: "w3-hover-green" %></i>
+    <% end %>
     <% @categories.each do |category| %>
 		
 				<li><%= link_to category, class: "w3-hover-text-blue" do %><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> <%= category.name %><% end %></span></span></strong></p></li>

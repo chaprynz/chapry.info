@@ -1,14 +1,14 @@
 <div style="background: rgba(0, 0, 0, 0.8)" class="w3-col l3 m3 s12  w3-hide-small ">
-	<div  class="w3-container w3-topbar w3-border-blue">
+	<div  class="w3-container ">
 		
 		<% @categories.each do |category| %>
 			<%= link_to category, class: "w3-hover-text-blue" do %>	
-				<div class="w3-border-bottom content w3-padding w3-container">
+				<div class="w3-border-bottom r content w3-padding w3-container">
 					<div  class="w3-col s4 m4 ">
   						<%= image_tag category.image, style: "width:100%" %>
 					</div>
-					<div style="padding-left:10px;line-height:0.8;font-size:12px" class=" w3-col s8 m8  w3-container">
-					  <p><strong><span style="color: rgb(184, 49, 47);"><span style="font-size: 18px;"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> <%= category.name %></span></span></strong></p>
+					<div style="padding-left:10px;line-height:1.2;font-size:12px" class=" w3-col s8 m8  w3-container">
+					  <p ><strong><span style="color: rgb(184, 49, 47);"><span  style="font-size: 18px;"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> <%= category.name %></span></span></strong></p>
 					  <p style="color:red"><%= category.created_at.strftime("%d-%m-%Y") %></p>
 					  <p style="color:lightblue"><i class="fa fa-eye" aria-hidden="true"></i> 2.6k</p>
 					</div>

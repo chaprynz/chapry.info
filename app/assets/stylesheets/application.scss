@@ -1,14 +1,15 @@
 @import 'w3.scss';
 @import 'font-awesome';
+@import "toastr";
 a {
     text-decoration:none;
    
 }
 
 
-.active {
-  
-  color: orange;
+.active .r {
+  background: rgba(215, 44, 44, 0.5);
+ 
 }
 
 
@@ -245,4 +246,37 @@ body {
 	background: url(http://mymaplist.com/img/parallax/back.png);
 	background-color: #444;
     background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);    
+}
+
+.cse .gsc-control-cse, .gsc-control-cse {
+  background: black!important;
+  border:0px!important; 
+  height:0px!important; 
+  margin-top:-52px!important;
+  color: black!important;
+  position:fixed!important;
+  z-index:9999;
+  max-width:360px!important;
+  margin-left: 99px;
+} 
+
+.gs-result .gs-title, .gs-result .gs-title * {
+  margin-bottom:16px!important;
+}
+
+.gs-title {
+  text-decoration:none!important;
+  font-weight:bold!important;
+  color:green!important;
+}
+
+b { text-decoration:none;
+}
+
+a.gs-title:link b {
+  text-decoration:none!important;
+}
+
+.gs-webResult div.gs-visibleUrl-long, .gs-promotion div.gs-visibleUrl-long {
+  color:white!important;
 }
