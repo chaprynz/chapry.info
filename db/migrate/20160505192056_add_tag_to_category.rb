@@ -1,5 +1,5 @@
 class AddTagToCategory < ActiveRecord::Migration
   def change
-    add_column :categories, :tag, :interger
+    add_column :categories, :tag, :integer
   end
 end
