@@ -1,7 +1,7 @@
 <div style="background: rgba(0, 0, 0, 0.8)"  class="w3-col l4 m4 w3-hide-small  ">
 	<div  class="w3-container">
 		<% @posts.each do |post| %>
-			<% if post.logo %><div style="" class="w3-border-bottom content  w3-container"><%= image_tag post.image, style: "width:100%" %></div>
+			<% if post.logo %><div style="" class="w3-border-bottom content  w3-container"><%= image_tag post.image.url, style: "width:100%" %></div>
 			<% end %>	
 		<% end %>
 		<% @posts.each do |post| %>
@@ -9,7 +9,7 @@
 			<%= link_to [post.category, post] do %>
 				<div class="w3-border-bottom content r w3-padding w3-container">
 					<div  class="w3-col s4 m4 ">
-  						<%= image_tag post.image, style: "width:100%" %>
+  						<%= image_tag post.image.url, style: "width:100%" %>
 					</div>
 					<div style="padding-left:10px;line-height:1.2;font-size:12px" class=" w3-col s8 m8  w3-container">
 					  <p style="color:white"><%= post.title %></p>
@@ -37,7 +37,7 @@
 			<%= link_to [post.category, post] do %>
 				<div style="" class="w3-border-bottom w3-hover-shadow w3-padding w3-container">
 					<div style="" class="w3-col s4 m4 ">
-	  					<%= image_tag post.image, style: "width:100%" %>
+	  					<%= image_tag post.image.url, style: "width:100%" %>
 					</div>
 					<div style="padding-left:10px;line-height:1.2;font-size:12px" class=" w3-col s8 m8  w3-container">
 					  <p><strong><%= post.title %></strong></p>

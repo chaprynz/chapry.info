@@ -13,7 +13,7 @@
 						<%= link_to category do %>
 							<div class="w3-padding  w3-col s6 l4 m6">
 								<div  class="w3-card-1 content ">
-									<%= image_tag category.image, style: "width:100%", class: "content-image" %>
+									<%= image_tag category.image.url, style: "width:100%", class: "content-image" %>
 									<div class="content-overlay"></div>
 									<div class="content-details fadeIn-bottom">
 								        <h3 class="content-title"><%= category.name %></h3>
@@ -37,7 +37,7 @@
 						<%= link_to category do %>
 							<div class="w3-padding  w3-col s6 l4 m6">
 								<div  class="w3-card-1  w3-hover-shadow ">
-									<%= image_tag category.image, style: "width:100%" %>
+									<%= image_tag category.image.url, style: "width:100%" %>
 									
 								</div>
 							</div>	
