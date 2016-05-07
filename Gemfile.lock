@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: 80904d394ad814c8fd7fbdb4978e2f1bb920422d
+  revision: 3ef5f9524cf9fd049d331a4776b00fe449a4dea1
   specs:
     paperclip (5.0.0.beta2)
       activemodel (>= 4.2.0)
@@ -133,7 +133,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
       thor (~> 0.14)
-    font-awesome-rails (4.6.1.0)
+    font-awesome-rails (4.6.2.0)
       railties (>= 3.2, < 5.1)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
@@ -298,7 +298,7 @@ DEPENDENCIES
   activeadmin!
   activeadmin-dragonfly!
   activeadmin-wysihtml5!
-  aws-sdk (~> 2.3)
+  aws-sdk (~> 2.0)
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)

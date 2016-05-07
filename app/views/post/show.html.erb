@@ -7,7 +7,7 @@
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="<%= @post.title %>">
 	<meta property="og:description" content="<%= @post.description %>">
-	<meta property="og:image" content="<%= @post.image %>">
+	<meta property="og:image" content="<%= @post.image.url %>">
 <% end %>
 
 <%= render partial: "shared/header" %>
