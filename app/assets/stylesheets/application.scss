@@ -175,6 +175,7 @@ img {
   max-width: 600px;
   margin: auto;
   overflow: hidden;
+ 
 }
 
 .content .content-overlay {
@@ -190,6 +191,7 @@ img {
   -webkit-transition: all 0.4s ease-in-out 0s;
   -moz-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
+  
 }
 
 .content:hover .content-overlay{
@@ -243,9 +245,9 @@ img {
 
 
 body {
-	background: url(http://mymaplist.com/img/parallax/back.png);
+	background: url(https://s3.amazonaws.com/froala/temp_files%2F1462671193980-back.png);
 	background-color: #444;
-    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);    
+    background: url(https://res.cloudinary.com/www-virgin-com/f_auto,q_80/virgin-com-prod/profiles/site_installer/themes/custom/virgin/images/bg-main.png?1462446064);    
 }
 
 .cse .gsc-control-cse, .gsc-control-cse {
@@ -297,3 +299,27 @@ div.gsc-clear-button {
   
 } 
 
+.shadow {
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  font-family: 'Futura', Helvetica;
+  font-size: 1.2rem;
+  color: #000;
+  position: relative;
+  box-shadow: 4px 4px 3px 0px rgba(50, 50, 50, 0.05);
+}
+.shadow:after {
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  content: "";
+  display: block;
+  z-index: -1;
+  background-color: black;
+  opacity:0.6;
+  position: absolute;
+  top: 0.5em;
+  right: -0.4em;
+  left: 0.4em;
+  bottom: -0.4em;
+  
+}

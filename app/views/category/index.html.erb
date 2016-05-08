@@ -1,24 +1,27 @@
 <%= render partial: "shared/header" %>
 <%= render partial: "shared/search" %>
 <div class="bodyimage w3-hide-small w3-display-container w3-animate-opacity">
-  
-  <%= image_tag "imagination.jpg", style: "width:100%;min-height:350px;max-height:600px;" %>
-  
+  <% @categories.where('id=1').each do |category| %>
+  <%= image_tag category.logo.url, style: "width:100%" %>
+  <% end %>
 </div>
-<div class="w3-hide-small w3-main" >
-	<div  class="w3-container">
+<div  class="w3-hide-small w3-main" >
+	
+	<div style="margin-left:42px" class="w3-container">
 		<div class=" w3-col l9 m9 s12">
 			<div style= class="w3-container  w3-white  w3-padding">
 				<% @categories.each do |category| %>	
 						<%= link_to category do %>
 							<div class="w3-padding  w3-col s6 l4 m6">
-								<div  class="w3-card-1 content ">
+								<div class="shadow">
+								<div  class="content">
 									<%= image_tag category.image.url, style: "width:100%", class: "content-image" %>
 									<div class="content-overlay"></div>
 									<div class="content-details fadeIn-bottom">
 								        <h3 class="content-title"><%= category.name %></h3>
 								        <p class="content-text"><%= category.description %></p>
 							        </div>
+								</div>
 								</div>
 							</div>	
 						<% end %>	

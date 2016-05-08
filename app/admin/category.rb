@@ -16,6 +16,7 @@ ActiveAdmin.register Category do
 		column :image
 		column :logo
 		column :tag
+		column :id
 		actions
 	end
     show do |t|
