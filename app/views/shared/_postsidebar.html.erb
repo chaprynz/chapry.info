@@ -1,13 +1,13 @@
 <div style="background: rgba(0, 0, 0, 0.8)"  class="w3-col l4 m4 w3-hide-small  ">
 	<div  class="w3-container">
 		<% @posts.each do |post| %>
-			<% if post.logo %><div style="" class="w3-border-bottom content  w3-container"><%= image_tag post.image.url, style: "width:100%" %></div>
+			<% if post.logo %><div style="" class="content  w3-container"><%= image_tag post.image.url, style: "width:100%" %></div>
 			<% end %>	
 		<% end %>
 		<% @posts.each do |post| %>
 			<% if !post.logo? %>
 			<%= link_to [post.category, post] do %>
-				<div class="w3-border-bottom content r w3-padding w3-container">
+				<div class=" content r w3-padding w3-container">
 					<div  class="w3-col s4 m4 ">
   						<%= image_tag post.image.url, style: "width:100%" %>
 					</div>
