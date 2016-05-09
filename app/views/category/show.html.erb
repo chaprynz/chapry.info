@@ -21,7 +21,6 @@
 		
 		<div class="w3-hide-small w3-col l9 m9 s12">
 			<div style="margin-bottom:30px" class="w3-container w3-padding">
-				
 				<% @posts.each do |post| %>	
 						<% if !post.logo? %>
 						<%= link_to [post.category, post] do %>

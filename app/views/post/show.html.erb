@@ -14,16 +14,11 @@
 <%= render partial: "shared/search" %>
 <div  class="w3-main">
 	<div style="margin-top:18px" class="w3-container ">
-		
-		<div style="font-family:Merriweather,Times,sans-serif;font-size:21px;" class=" w3-col l8 w3-white m8 s12">
-			<div class="w3-container  w3-padding">
-				<div class=" embed-container">
+		<div style="font-family:Merriweather,Times,sans-serif;font-size:21px;" class=" w3-col l8  m8 s12">
+			<div style="margin-left:42px" class="w3-container">
 					<%= raw @post.video %>
-					
-				</div>
-			</div>
-			
-			<div style="margin-left:42px" class="w3-container w3-hide-small w3-padding">
+				</div><br>
+			<div style="margin-left:42px" class="w3-container w3-white w3-hide-small w3-padding">
 				<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 				<div  class="alink ">
 					
@@ -32,7 +27,7 @@
 				</div>
 				
 			</div>
-			<div  class="w3-container w3-hide-large w3-hide-medium w3-padding">
+			<div  class="w3-container w3-white w3-hide-large w3-hide-medium w3-padding">
 				<div class="fb-like" data-width="200" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 				<div  class="alink ">
 					<%= raw @post.content %>
