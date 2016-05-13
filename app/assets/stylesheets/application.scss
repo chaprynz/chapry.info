@@ -319,3 +319,7 @@ div.gsc-clear-button {
   bottom: -0.3em;
   
 }
+
+.fb-like-box, .fb-like-box span, .fb-like-box.fb_iframe_widget span iframe {
+    width: 100% !important;
+}
