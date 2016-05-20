@@ -44,7 +44,7 @@
 		<div class="w3-hide-large w3-hide-medium  w3-white  ">
 			<div style="margin-top:42px" class="w3-container">
 				<% @posts.each do |post| %>
-					<% if !post.logo? %>
+					
 					<%= link_to [post.category, post] do %>
 						<div style="" class="w3-border-bottom w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
@@ -57,7 +57,7 @@
 							</div>
 						</div>	
 					<% end %>
-					<% end %>
+					
 				<% end %>
 				<%= paginate @posts %>
 			</div>	
