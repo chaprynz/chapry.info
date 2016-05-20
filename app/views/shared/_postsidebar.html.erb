@@ -1,26 +1,19 @@
-<div style="background: rgba(0, 0, 0, 0.8)"  class="w3-col l4 m4 w3-hide-small  ">
-	<div  class="w3-container">
-		<% @posts.each do |post| %>
-			<% if post.logo %><div style="" class="content  w3-container"><%= image_tag post.image.url, style: "width:100%" %></div>
-			<% end %>	
-		<% end %>
+<div  class=" w3-col l4 m4 w3-hide-small  ">
+	<div  class="  w3-container">
+		<div class="w3-margin r w3-card-2 w3-padding w3-white">
+		<div class="fb-page" data-href="https://www.facebook.com/chaprynz" data-tabs="timeline" data-height="70" data-width="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/chaprynz"><a href="https://www.facebook.com/chaprynz">Chapry</a></blockquote></div></div>
+		</div>
 		<% @posts.each do |post| %>
 			<% if !post.logo? %>
 			<%= link_to [post.category, post] do %>
-				<div class=" content r w3-padding w3-container">
+				<div class="w3-white w3-margin content r w3-padding w3-container">
 					<div  class="w3-col s4 m4 ">
   						<%= image_tag post.image.url, style: "width:100%" %>
 					</div>
 					<div style="padding-left:10px;line-height:1.2;font-size:12px" class=" w3-col s8 m8  w3-container">
-					  <p style="color:white"><%= post.title %></p>
-					  <p style="color:red"><%= post.created_at.strftime("%d-%m-%Y") %></p>
-					  <p style="color:lightblue"><i class="fa fa-eye" aria-hidden="true"></i> 2.6k</p>
+					  <p><strong><%= post.title %></strong></p>
+					  <p><strong><%= post.created_at.strftime("%d-%m-%Y") %></strong></p>
 					</div>
-					<div class="content-overlay"></div>
-					<div class="content-details fadeIn-bottom">
-				        <h3 class="content-title"><%= post.title %></h3>
-				        <p class="content-text"><%= post.description %></p>
-			        </div>
 				</div>
 			<% end %>
 			<% end %>

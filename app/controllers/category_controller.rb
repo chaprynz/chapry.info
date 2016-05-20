@@ -1,6 +1,7 @@
 class CategoryController < ApplicationController
   def index
     @categories = Category.all.order(:tag)
+    @posts = Post.all.order(:tag).page(params[:page]).per(25)
   end
 
   def show

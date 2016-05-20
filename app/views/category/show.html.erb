@@ -25,21 +25,12 @@
 						<% if !post.logo? %>
 						<%= link_to [post.category, post] do %>
 							<div class="w3-padding  w3-col l4 m6">
-								<div class="shadow">
-								<div style="" class="w3-card-1 content">
+								<div style="" class="w3-card-2 w3-round content">
 									<%= image_tag post.image.url, style: "width:100%" %>
-									<div style="line-height:1.2;font-size:12px" class="w3-padding w3-white w3-container">
+									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-padding w3-white w3-container">
+										<p style="color:red"><%= post.created_at.strftime("%d-%m-%Y") %></p>
 										<p><strong><%= post.title %></strong></p>
-										  <p style="color:red"><%= post.created_at.strftime("%d-%m-%Y") %></p>
-										  <p style="color:green"><i class="fa fa-eye" aria-hidden="true"></i> 2.6k</p>
 									</div>
-									<div class="content-overlay"></div>
-									<div class="content-details fadeIn-bottom">
-								        <h3 class="content-title"><%= post.title %></h3>
-								        <p class="content-text"><%= post.description %></p>
-								        
-							        </div>
-								</div>
 								</div>
 							</div>	
 						<% end %>
