@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506104926) do
+ActiveRecord::Schema.define(version: 20160520193736) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160506104926) do
     t.string   "slug"
     t.integer  "tag"
     t.text     "description"
+    t.boolean  "homelogo"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

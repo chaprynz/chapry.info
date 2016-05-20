@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-    permit_params :name, :image, :logo, :slug, :tag, :description
+    permit_params :name, :image, :logo, :slug, :tag, :description, :homelogo
     
     sortable tree: false,
 						sorting_attribute: :tag
@@ -13,6 +13,7 @@ ActiveAdmin.register Category do
    
     index do 
 		column :name
+		column :homelogo
 		column :image
 		column :logo
 		column :tag
@@ -30,6 +31,7 @@ ActiveAdmin.register Category do
 		f.inputs do
 			f.input :name
 			f.input :slug
+			f.input :homelogo
 			f.input :description
 			f.input :image, hint: f.category.image? ? image_tag(category.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	
 			f.input :logo, hint: f.category.logo? ? image_tag(category.logo.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	

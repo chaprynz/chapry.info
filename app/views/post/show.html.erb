@@ -15,12 +15,15 @@
 <div  class="w3-main">
 	<div style="margin-top:18px" class="w3-container ">
 		<div style="font-family:Merriweather,Times,sans-serif;font-size:21px;" class=" w3-col l8  m8 s12">
-			<div style="margin-left:42px" class="w3-container">
+			<div style="margin-left:42px" class="w3-hide-small videoWrapper w3-container">
 					<%= raw @post.video %>
 				</div><br>
+			<div class="w3-hide-large w3-hide-medium videoWrapper w3-container">
+					<%= raw @post.video %>
+				</div><br>	
 			<div style="margin-left:42px" class="w3-container w3-white w3-hide-small w3-padding">
 				<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-				<div  class="alink ">
+				<div  class=" alink ">
 					
 					<%= raw @post.content %>
 					
