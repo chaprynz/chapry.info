@@ -4,7 +4,7 @@
 		<div class="fb-page" data-href="https://www.facebook.com/chaprynz" data-tabs="timeline" data-height="70" data-width="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/chaprynz"><a href="https://www.facebook.com/chaprynz">Chapry</a></blockquote></div></div>
 		</div>
 		<% @posts.each do |post| %>
-			<% if !post.logo? %>
+			
 			<%= link_to [post.category, post] do %>
 				<div class="w3-white w3-margin content r w3-padding w3-container">
 					<div  class="w3-col s4 m4 ">
@@ -16,7 +16,7 @@
 					</div>
 				</div>
 			<% end %>
-			<% end %>
+			
 		<% end %>
 		<%= paginate @posts %>
 		
