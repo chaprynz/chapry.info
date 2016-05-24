@@ -6,11 +6,11 @@
   <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
     <a class="w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   </li>
-  <li style="font-family: 'Cabin Sketch', cursive;font-weight:900"><%= link_to  root_path, class: "w3-hover-green w3-red w3-container" do %>chapry<% end %></li>
+  <li style="font-family: 'Cabin Sketch', cursive;font-weight:900"><%= link_to  root_path, class: "w3-hover-green  w3-container", style: "background:#E1090A;color:white" do %>chapry<% end %></li>
   
   
   <% if(!user_signed_in?) %>
-    <li class="w3-hide-small w3-right"><%= link_to "Đăng Nhập", new_user_session_path, class: "w3-hover-green" %></li>
+    <li style="color:red;font-family: 'Cabin Sketch', cursive" class="w3-hide-small w3-right"><%= link_to "Đăng Nhập", new_user_session_path, class: "w3-hover-green" %></li>
       <% else%>
         <div class="w3-right w3-hide-small w3-dropdown-click">
           <button onclick="myFunction()" class=" w3-hover-green w3-btn"><%= image_tag avatar_url(current_user), style: "width:36px", class: "w3-small  w3-round" %>&nbsp; <%= current_user.name %> <i class="fa fa-caret-down" aria-hidden="true"></i></button>

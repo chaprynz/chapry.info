@@ -24,9 +24,9 @@
 				<% @posts.each do |post| %>
 						<%= link_to [post.category, post] do %>
 							<div class="w3-padding  w3-col l4 m6">
-								<div class="w3-card-2 w3-round content">
-									<%= image_tag post.image.url, style: "width:100%" %>
-									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-padding  w3-white w3-container">
+								<div class="w3-card-2 w3-white content">
+									<div class="w3-padding"><%= image_tag post.image.url, style: "width:100%" %></div>
+									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-padding  w3-container">
 										<p style="color:#9E8383"><%= post.created_at.strftime("%d-%m-%Y") %></p>
 					  					<p><strong><%= post.title %></strong></p>
 									</div>

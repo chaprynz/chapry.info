@@ -1,14 +1,15 @@
+<% content_for :head do %>
+	<title>Chapry.com</title>
+<% end %>
 <%= render partial: "shared/header" %>
 <%= render partial: "shared/search" %>
-<div class="bodyimage w3-display-container w3-hide-small w3-display-container w3-animate-opacity">
+<div class="bodyimage  w3-hide-small w3-display-container w3-animate-opacity">
   <% @categories.each do |category| %>
 	  <% if category.homelogo %>
 	  	<%= image_tag category.logo.url, style: "width:100%" %>
 	  <% end %>
   <% end %>
-  <div class="w3-container w3-display-topleft" style="color:crimson;;">  
-    <h1 style="font-weight:900;font-size:80px"><strong>HỌC TIẾNG ANH</strong></h1>
-  </div>
+  
 </div><br>
 <div  class="w3-hide-small w3-main" >
 	
@@ -18,12 +19,16 @@
 				<% @posts.each do |post| %>
 						<%= link_to [post.category, post] do %>
 							<div class="w3-padding  w3-col l4 m6">
-								<div class="w3-card-2 w3-round w3-display-container content">
-									<%= image_tag post.image.url, style: "width:100%" %>
-									<div  class="w3-red  w3-display-topright"><%= raw post.description %></div>
-									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-padding  w3-white w3-container">
+								<div class="w3-card-2 w3-white content">
+									<div class=" w3-container w3-padding-small ">
+										<%= image_tag post.image.url, style: "width:100%" %>
+										
+									</div>
+									
+									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
 										<p style="color:#9E8383"><%= post.created_at.strftime("%d-%m-%Y") %></p>
 					  					<p><strong><%= post.title %></strong></p>
+									    <div style="background:#EF804F;color:white" class=" w3-padding w3-display-topright"><%= raw post.description %></div>
 									</div>
 								</div>
 							</div>	

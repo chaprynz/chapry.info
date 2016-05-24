@@ -6,7 +6,7 @@
 		<% @categories.each do |category| %>
 			<% if !category.homelogo? %>
 			<%= link_to category, class: "w3-hover-text-blue" do %>	
-				<div style="margin-bottom:10px" class="w3-white  w3-card-2  content w3-padding w3-container">
+				<div style="margin-bottom:10px" class="w3-white  w3-card-2  r content w3-padding w3-container">
 					<div  class="w3-col s4 m4 ">
   						<%= image_tag category.image.url, style: "width:100%" %>
 					</div>
