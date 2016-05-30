@@ -24,6 +24,8 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+gem 'aws-sdk', '~> 2'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
