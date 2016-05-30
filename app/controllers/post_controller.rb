@@ -1,12 +1,9 @@
 class PostController < ApplicationController
   def show
-    
-    category = Category.find(params[:category_id])
+    subcategory = Subcategory.find(params[:subcategory_id])
   	@post = Post.find(params[:id])
-  	@posts = category.posts.order(:tag).page(params[:page]).per(25)
-  	
+  	@posts = subcategory.posts
   	@categories = Category.all
-  	
-  	
   end
+
 end

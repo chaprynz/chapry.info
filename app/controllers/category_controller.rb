@@ -1,13 +1,15 @@
 class CategoryController < ApplicationController
   def index
     @categories = Category.all.order(:tag)
-    @posts = Post.all.order(:tag).page(params[:page]).per(25)
+    @subcategories = Subcategory.all
+    @tintucs = Tintuc.all
   end
 
   def show
     @categories = Category.all
     @category = Category.find(params[:id])
-  	@posts = @category.posts.order(:tag).page(params[:page]).per(25)
+  	@subcategories = @category.subcategories
   	
   end
+
 end

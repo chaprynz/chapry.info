@@ -2,8 +2,14 @@
 
 one:
   title: MyString
+  description: MyText
   content: MyText
+  video: MyText
+  subcategory_id: 
 
 two:
   title: MyString
+  description: MyText
   content: MyText
+  video: MyText
+  subcategory_id: 

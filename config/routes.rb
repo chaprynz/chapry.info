@@ -1,11 +1,26 @@
 Rails.application.routes.draw do
+  
+
+  get 'tintuc/index'
+
+  get 'tintuc/show'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
-              :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
-    resources :category do
-  	  resources :post, only: [:show]
+  devise_for :users
+  resources :category do
+  	  resources :subcategory, show: [:only] 
     end
-  
-  root "category#index"
+    
+     resources :subcategory do
+        resources :post
+      end
+    
+    root "category#index"
+    
+    resources :tintuc
+   
+    get '/tintuc' => 'tintuc#index'
+    
+
 end

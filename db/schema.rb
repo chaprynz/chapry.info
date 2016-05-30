@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520193736) do
+ActiveRecord::Schema.define(version: 20160529110043) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -46,8 +46,11 @@ ActiveRecord::Schema.define(version: 20160520193736) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.text     "video"
+    t.text     "description"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -58,43 +61,132 @@ ActiveRecord::Schema.define(version: 20160520193736) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.string   "slug"
-    t.integer  "tag"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
     t.text     "description"
     t.boolean  "homelogo"
-  end
-
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string   "slug",                      null: false
-    t.integer  "sluggable_id",              null: false
-    t.string   "sluggable_type", limit: 50
-    t.string   "scope"
-    t.datetime "created_at"
-  end
-
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "category_id"
-    t.string   "video"
-    t.boolean  "logo"
-    t.string   "slug"
-    t.text     "description"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.integer  "tag"
+    t.boolean  "vocabulary"
+    t.boolean  "grammar"
+    t.boolean  "a"
+    t.boolean  "b"
+    t.boolean  "c"
+    t.boolean  "d"
+    t.boolean  "e"
+    t.boolean  "f"
+    t.boolean  "g"
+    t.boolean  "h"
+    t.boolean  "i"
+    t.boolean  "j"
+    t.boolean  "k"
+    t.boolean  "l"
+    t.boolean  "m"
+    t.boolean  "n"
+    t.boolean  "o"
+    t.boolean  "p"
+    t.boolean  "q"
+    t.boolean  "r"
+    t.string   "shortname"
+    t.text     "shortdescription"
   end
 
-  add_index "posts", ["category_id"], name: "index_posts_on_category_id"
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.text     "video"
+    t.integer  "subcategory_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "shortdescription"
+  end
+
+  add_index "posts", ["subcategory_id"], name: "index_posts_on_subcategory_id"
+
+  create_table "subcategories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "category_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.boolean  "a"
+    t.boolean  "b"
+    t.boolean  "c"
+    t.boolean  "d"
+    t.boolean  "e"
+    t.boolean  "f"
+    t.boolean  "g"
+    t.boolean  "h"
+    t.boolean  "i"
+    t.boolean  "j"
+    t.boolean  "k"
+    t.boolean  "l"
+    t.boolean  "m"
+    t.boolean  "n"
+    t.boolean  "o"
+    t.boolean  "p"
+    t.boolean  "q"
+    t.boolean  "r"
+    t.text     "shortdescription"
+  end
+
+  add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
+
+  create_table "tintucs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.text     "description"
+    t.text     "video"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "shortdescription"
+    t.boolean  "a"
+    t.boolean  "b"
+    t.boolean  "c"
+    t.boolean  "d"
+    t.boolean  "e"
+    t.boolean  "f"
+    t.boolean  "g"
+    t.boolean  "h"
+    t.boolean  "i"
+    t.boolean  "j"
+    t.boolean  "k"
+    t.boolean  "l"
+    t.boolean  "m"
+    t.boolean  "n"
+    t.boolean  "o"
+    t.boolean  "p"
+    t.boolean  "q"
+    t.boolean  "r"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -109,10 +201,6 @@ ActiveRecord::Schema.define(version: 20160520193736) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

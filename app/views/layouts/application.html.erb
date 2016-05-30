@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <title>Chapry.com</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta property="fb:pages" content="290275247971028" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <%= yield :head %>
-
-  <script src="//load.sumome.com/" data-sumo-site-id="4d04ae2458295293a230e852bc2b3c5057c3bfdd97eaabdf3800dab2e5740fdc" async="async"></script>
-  <script>
+  <script src="//load.sumome.com/" data-sumo-site-id="ff5b53606097783cbd225b8adcadef6dd7c0533e240fdf2ea3c8e1074c8d15aa" async="async"></script>  
+   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -19,19 +19,14 @@
   ga('create', 'UA-77380258-1', 'auto');
   ga('send', 'pageview');
 
-</script>
-<link rel="icon" href="https://s3.amazonaws.com/chaprydeploy/chaprylogo.png" sizes="32x32"/>
-<link rel="icon" href="https://s3.amazonaws.com/chaprydeploy/chaprylogo.png" sizes="192x192"/>
-<link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/chaprydeploy/chaprylogo.png">
-<meta name="msapplication-TileImage" content="https://s3.amazonaws.com/chaprydeploy/chaprylogo.png">
+</script> 
+
 </head>
 <body>
 
-    <%= render partial: "shared/message" %>  
-    <%= yield %>
-  
-  
-  <script>
+<%= yield %>
+
+<script>
 function w3_open() {
     document.getElementsByClassName("w3-sidenav")[0].style.width = "300px";
     document.getElementsByClassName("w3-sidenav")[0].style.textAlign = "center";
