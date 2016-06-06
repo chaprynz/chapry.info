@@ -13,6 +13,18 @@
 <%= render partial: "shared/header" %>
 <%= render partial: "shared/search" %>
 
+<div style="max-width:1260px;margin:auto" class="w3-center w3-hide-small  w3-container" >
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- index page header ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9796522511877943"
+     data-ad-slot="5521912712"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
 <div  style="max-width:1260px;margin:auto;margin-top:24px" class="bodyimage w3-animate-opacity">
   <% @categories.each do |category| %>
 	  <% if category.homelogo %>
@@ -23,30 +35,18 @@
 
 <div style="max-width:1260px;margin:auto" class="w3-main" >
 	<div style="margin-left:42px" class="w3-container">
-		<div class="w3-hide-small w3-col l9 m12 s12">
+		<div class="w3-hide-small w3-hide-medium w3-col l9 m9 s12">
 			<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-center w3-container=" >
-					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- home page -->
-					<ins class="adsbygoogle"
-					     style="display:inline-block;width:728px;height:90px"
-					     data-ad-client="ca-pub-9796522511877943"
-					     data-ad-slot="3611847518"></ins>
-					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-				</div>
-				
-				<div class="w3-padding w3-container"><%= link_to tintuc_index_path do %><button style="background:#2C2453" class="w3-btn">A <i class="fa fa-plus" aria-hidden="true"></i></button><% end %></div>
+				<div class="w3-padding w3-container"><%= link_to tintuc_index_path do %><button style="background:#2C2453" class="w3-btn">News <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button><% end %></div>
 					<% @tintucs.each do |tintuc| %>
 						<% if tintuc.a %>
 						<%= link_to tintuc do %>
-							<div class="w3-padding  w3-col l4 m4">
+							<div class="w3-padding  w3-col l4 m6">
 								<div class="w3-card-2 w3-white content">
 									<div class=" w3-container w3-padding-small ">
 										<%= image_tag tintuc.image.url, style: "width:100%" %>
 									</div>
-									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
+									<div style="min-height:150px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
 										<p style="color:#9E8383"><%= tintuc.created_at.strftime("%d-%m-%Y") %></p>
 					  					<p><strong><%= tintuc.title %></strong></p>
 									    <div style="background:#2C2453;color:white" class=" w3-padding w3-display-topright"><%= tintuc.description %></div>
@@ -59,19 +59,24 @@
 				</div>
 			
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-					<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.a %><%= link_to category do %><button style="background:#A8182F" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+					
+					<% @categories.each do |category| %>
+					<% if category.a %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 					
 					<% @subcategories.each do |subcategory| %>
 						<% if subcategory.a %>
 							<%= link_to [subcategory.category, subcategory] do %>
-								<div class="w3-padding  w3-col l4 m4">
+								<div class="w3-padding  w3-col l4 m6">
 									<div class="w3-card-2 w3-white content">
 										<div class=" w3-container w3-padding-small ">
 											<%= image_tag subcategory.image, style: "width:100%" %>
 										</div>
 										
 										<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-											<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+											<br>
 						  					<p><strong><%= subcategory.name %></strong></p>
 										    <div style="background:#A8182F;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 										</div>
@@ -83,12 +88,16 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#0D47A1" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.b %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.b %>
 						<%= link_to [subcategory.category, subcategory] do %>
-							<div class="w3-padding  w3-col l4 m4">
+							<div class="w3-padding  w3-col l4 m6">
 								<div class="w3-card-2 w3-white content">
 									<div class=" w3-container w3-padding-small ">
 										<%= image_tag subcategory.image, style: "width:100%" %>
@@ -96,7 +105,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#0D47A1;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -121,7 +130,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.c %><%= link_to category do %><button style="background:#880E4F" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.c %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.c %>
@@ -134,7 +147,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#880E4F;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -146,7 +159,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.d %><%= link_to category do %><button style="background:#2196F3" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.d %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.d %>
@@ -159,7 +176,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#2196F3;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -171,7 +188,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.e %><%= link_to category do %><button style="background:#009688" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.e %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.e %>
@@ -184,7 +205,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#009688;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -196,7 +217,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.f %><%= link_to category do %><button style="background:#CDDC39" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.f %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.f %>
@@ -209,7 +234,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#CDDC39;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -221,7 +246,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.g %><%= link_to category do %><button style="background:#FF9800" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.g %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.g %>
@@ -234,7 +263,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#FF9800;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -246,7 +275,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.h %><%= link_to category do %><button style="background:#795548" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.h %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.h %>
@@ -259,7 +292,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#795548;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -271,7 +304,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.i %><%= link_to category do %><button style="background:#212121" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.i %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.i %>
@@ -284,7 +321,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#212121;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -296,7 +333,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.j %><%= link_to category do %><button style="background:#BF360C" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.j %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.j %>
@@ -309,7 +350,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#BF360C;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -321,7 +362,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.k %><%= link_to category do %><button style="background:#607D8B" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.k %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.k %>
@@ -334,7 +379,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#607D8B;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -346,7 +391,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.l %><%= link_to category do %><button style="background:#2E7D32" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.l %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.l %>
@@ -359,7 +408,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#2E7D32;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -371,7 +420,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.m %><%= link_to category do %><button style="background:#6A1B9A" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.m %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.m %>
@@ -384,7 +437,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#6A1B9A;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -396,7 +449,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.n %><%= link_to category do %><button style="background:#880E4F" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.n %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.n %>
@@ -409,7 +466,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#880E4F;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -421,7 +478,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.o %><%= link_to category do %><button style="background:#3F51B5#3F51B5" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.o %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.o %>
@@ -434,7 +495,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#3F51B5;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -446,7 +507,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.p %><%= link_to category do %><button style="background:#689F38" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.p %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.p %>
@@ -459,7 +524,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#689F38;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -471,7 +536,11 @@
 				</div>
 				
 				<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.q %><%= link_to category do %><button style="background:#A8182F" class="w3-btn"><%= category.shortsname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.q %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.q %>
@@ -484,7 +553,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#A8182F;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -497,7 +566,11 @@
 				
 				
 			<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.r %><%= link_to category do %><button style="background:#673AB7" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+				<% @categories.each do |category| %>
+					<% if category.r %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
 						<% if subcategory.r %>
@@ -510,7 +583,7 @@
 									</div>
 									
 									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-display-container w3-padding w3-container">
-										<p style="color:#9E8383"><%= subcategory.created_at.strftime("%d-%m-%Y") %></p>
+										<br>
 					  					<p><strong><%= subcategory.name %></strong></p>
 									    <div style="background:#673AB7;color:white" class=" w3-padding w3-display-topright"><%= subcategory.description %></div>
 									</div>
@@ -524,14 +597,14 @@
 		<%= render partial: "shared/sidebar" %>
 	
 	</div>
-	
-	<div class="w3-hide-large w3-hide-medium w3-white">
+	<!-- small screen --> 
+	<div class="w3-hide-large">
 		<div style="margin-top:10px" class="w3-container">
 			<div class="w3-padding w3-container"><%= link_to tintuc_index_path do %><button style="background:#2C2453" class="w3-btn">A <i class="fa fa-plus" aria-hidden="true"></i></button><% end %></div>
 			<% @tintucs.each do |tintuc| %>
 				<% if tintuc.a %>
 					<%= link_to tintuc do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag tintuc.image.url, style: "width:100%" %>
 							</div>
@@ -544,11 +617,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.a %><%= link_to category do %><button style="background:#A8182F" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.a %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.a %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -561,11 +638,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#0D47A1" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.b %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.b %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -578,11 +659,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#880E4F" class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.c %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.c %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -595,11 +680,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#2196F3 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.d %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.d %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -612,11 +701,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#009688 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.e %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.e %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -629,11 +722,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#CDDC39 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.f %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.f %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -646,11 +743,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#FF9800 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.g %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.g %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -663,11 +764,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#795548 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.h %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.h %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -680,11 +785,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#212121 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.i %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.i %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -697,11 +806,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#BF360C " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.j %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.j %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -714,11 +827,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#607D8B " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.k %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.k %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -731,11 +848,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#2E7D32 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.l %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.l %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -748,11 +869,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#9E8383 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.m %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.m %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -765,11 +890,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#880E4F " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.n %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.n %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -782,11 +911,15 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#3F51B5 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.o %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
-				<% if subcategory.n %>
+				<% if subcategory.o %>
 					<%= link_to [subcategory.category, subcategory] do %>
-						<div style="" class="w3-padding w3-container">
+						<div style="" class="w3-margin w3-white w3-padding w3-container">
 							<div style="" class="w3-col s4 m4 ">
 			  					<%= image_tag subcategory.image.url, style: "width:100%" %>
 							</div>
@@ -799,7 +932,11 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#689F38 " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.p %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.p %>
 					<%= link_to [subcategory.category, subcategory] do %>
@@ -816,7 +953,11 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#A8182F " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.q %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.q %>
 					<%= link_to [subcategory.category, subcategory] do %>
@@ -833,7 +974,11 @@
 				<% end %>
 			<% end %>
 			
-			<div class="w3-padding w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><button style="background:#673AB7  " class="w3-btn"><%= category.shortname %> <i class="fa fa-plus" aria-hidden="true"></i></button><% end %><% end %><% end %></div>
+			<% @categories.each do |category| %>
+					<% if category.r %>
+					<%= link_to category do %>
+					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<% end %><% end %><% end %>
 			<% @subcategories.each do |subcategory| %>
 				<% if subcategory.r %>
 					<%= link_to [subcategory.category, subcategory] do %>

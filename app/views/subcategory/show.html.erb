@@ -13,14 +13,14 @@
 <%= render partial: "shared/header" %>
 <%= render partial: "shared/search" %>
 
-<div style="max-width:1260px;margin:auto;margin-top:24px" class="w3-hide-small w3-display-container w3-animate-opacity">
+<div style="max-width:1260px;margin:auto;margin-top:24px" class="w3-animate-opacity">
   <%= image_tag @subcategory.logo, style: "width:100%" %>
 </div>
 
 <div style="max-width:1260px;margin:auto" class="w3-main">
 	<div  class="w3-container ">
-		<div  class="w3-hide-small w3-col l9 m9 s12">
-			<div style="margin-left:42px;margin-bottom:30px" class="w3-container w3-padding">
+		<div class="w3-col l9 m12 s12">
+			<div style="max-width:600px;margin:auto;" class="w3-container w3-padding">
 				<div class="w3-center w3-hide-medium w3-container=" >
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<!-- home page -->
@@ -36,20 +36,22 @@
 				
 				<% @posts.each do |post| %>
 						<%= link_to [post.subcategory, post] do %>
-							<div class="w3-padding  w3-col l4 m6">
-								<div class="w3-card-2 w3-white content">
-									<div class="w3-padding"><%= image_tag post.image.url, style: "width:100%" %></div>
-									<div style="min-height:100px;line-height:1.2;font-size:12px" class="w3-padding  w3-container">
-										<p style="color:#9E8383"><%= post.created_at.strftime("%d-%m-%Y") %></p>
-					  					<p><strong><%= post.title %></strong></p>
-									</div>
+							<div style="" class="w3-card-2 w3-margin w3-padding w3-white w3-container">
+								<div style="" class="w3-col s4 m4 ">
+				  					<%= image_tag post.image.url, style: "width:100%" %>
 								</div>
-							</div>	
+								<div style="padding-left:10px;line-height:1.2;font-size:12px" class=" w3-col s8 m8  w3-container">
+								  <br>
+								  <p><strong><%= post.title %></strong></p>
+								  <p style="color:#9E8383"><%= post.description %></p>
+								</div>
+							</div>
 						<% end %>
 				<% end %>
 			</div>
+			<div class="w3-center"><%= paginate @posts, :outer_window => 3 %></div>
 		</div>
-		<%= render partial: "shared/subsidebar" %>
+		<%= render partial: "shared/sidebar" %>
 	</div>
 </div>
 

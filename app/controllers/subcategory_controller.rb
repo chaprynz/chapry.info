@@ -1,8 +1,8 @@
 class SubcategoryController < ApplicationController
   def show
-    @subcategories = Subcategory.all
+     @subcategory = Subcategory.all
     @subcategory = Subcategory.find(params[:id])
-  	@posts = @subcategory.posts
+  	@posts = @subcategory.posts.order(:tag).page(params[:page]).per(25)
   	@categories = Category.all
   end
 

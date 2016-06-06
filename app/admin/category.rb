@@ -1,5 +1,5 @@
 ActiveAdmin.register Category do
-    permit_params :name, :image, :logo, :homelogo, :tag, :shortname, :shortdescription, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r
+    permit_params :name, :image, :logo, :homelogo, :tag, :shortname, :shortdescription, :slug, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r
     
     sortable tree: false,
 						sorting_attribute: :id
@@ -27,6 +27,7 @@ ActiveAdmin.register Category do
 	form :html => { :enctype => "multipart/form-data" } do |f|
 		f.inputs do
 			f.input :name
+			f.input :slug
 			f.input :shortname
 			f.input :homelogo
 			f.input :image, hint: f.category.image? ? image_tag(category.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	
@@ -54,6 +55,4 @@ ActiveAdmin.register Category do
 		end
 		f.actions
 	end
-
-
 end

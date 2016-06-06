@@ -25,6 +25,8 @@ gem 'omniauth-facebook'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 gem 'aws-sdk', '~> 2'
+gem 'friendly_id', '~> 5.1.0'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'

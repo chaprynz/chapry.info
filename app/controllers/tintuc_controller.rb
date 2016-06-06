@@ -1,6 +1,6 @@
 class TintucController < ApplicationController
   def index
-     @tintucs = Tintuc.all
+     @tintucs = Tintuc.all.order(:tag).page(params[:page]).per(25)
      @categories = Category.all
   end
 
