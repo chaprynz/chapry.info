@@ -2,7 +2,7 @@ ActiveAdmin.register Category do
     permit_params :name, :image, :logo, :homelogo, :tag, :shortname, :shortdescription, :slug, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r
     
     sortable tree: false,
-						sorting_attribute: :id
+						sorting_attribute: :tag
     
    index :as => :sortable do
 		label :name

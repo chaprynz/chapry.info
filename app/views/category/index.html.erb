@@ -37,7 +37,7 @@
 	<div style="margin-left:42px" class="w3-container">
 		<div class="w3-hide-small w3-hide-medium w3-col l9 m9 s12">
 			<div style="margin-bottom:30px" class="w3-container w3-padding">
-				<div class="w3-padding w3-container"><%= link_to tintuc_index_path do %><button style="background:#2C2453" class="w3-btn">News <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button><% end %></div>
+				<div class="w3-padding w3-container"><%= link_to tintuc_index_path do %><button style="background:#263238" class="w3-btn">Daily <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button><% end %></div>
 					<% @tintucs.each do |tintuc| %>
 						<% if tintuc.a %>
 						<%= link_to tintuc do %>
@@ -63,7 +63,7 @@
 					<% @categories.each do |category| %>
 					<% if category.a %>
 					<%= link_to category do %>
-					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<div class="w3-padding w3-container"><button style="background:#171717" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
 					<% end %><% end %><% end %>
 					
 					<% @subcategories.each do |subcategory| %>
@@ -133,7 +133,7 @@
 				<% @categories.each do |category| %>
 					<% if category.c %>
 					<%= link_to category do %>
-					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<div class="w3-padding w3-container"><button style="background:#A8182F" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
 					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
@@ -162,7 +162,7 @@
 				<% @categories.each do |category| %>
 					<% if category.d %>
 					<%= link_to category do %>
-					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<div class="w3-padding w3-container"><button style="background:#673AB7" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
 					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
@@ -191,7 +191,7 @@
 				<% @categories.each do |category| %>
 					<% if category.e %>
 					<%= link_to category do %>
-					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<div class="w3-padding w3-container"><button style="background:#FFC107" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
 					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
@@ -220,7 +220,7 @@
 				<% @categories.each do |category| %>
 					<% if category.f %>
 					<%= link_to category do %>
-					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<div class="w3-padding w3-container"><button style="background:#00897B" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
 					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
@@ -249,7 +249,7 @@
 				<% @categories.each do |category| %>
 					<% if category.g %>
 					<%= link_to category do %>
-					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<div class="w3-padding w3-container"><button style="background:#3F51B5" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
 					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
@@ -278,7 +278,7 @@
 				<% @categories.each do |category| %>
 					<% if category.h %>
 					<%= link_to category do %>
-					<div class="w3-padding w3-container"><button style="background:#2C2453" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
+					<div class="w3-padding w3-container"><button style="background:#0091EA" class="w3-btn"><%= category.name %> <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button></div>
 					<% end %><% end %><% end %>
 				
 				<% @subcategories.each do |subcategory| %>
