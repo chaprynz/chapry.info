@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  	permit_params :title, :image, :content, :subcategory_id, :video, :description, :shortdescription, :slug, :tag
+  	permit_params :title, :image, :content, :subcategory_id, :video, :description, :shortdescription, :slug, :tag, :hide
 	
 	sortable tree: false,
 						sorting_attribute: :tag
@@ -22,6 +22,7 @@ ActiveAdmin.register Post do
 			input :subcategory, label: "Subcategory"
 			input :title, label: "Title"
 			input :slug, label: "Slug"
+			input :hide, label: "Hide"
 			input :description, label: "Description"
 			input :content, label: "Content",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
 			input :video, label: "Video",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]

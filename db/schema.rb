@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608073904) do
+ActiveRecord::Schema.define(version: 20160608124708) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 20160608073904) do
     t.text     "shortdescription"
     t.integer  "tag"
     t.string   "slug"
+    t.boolean  "hide"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
@@ -223,6 +224,7 @@ ActiveRecord::Schema.define(version: 20160608073904) do
     t.boolean  "r"
     t.string   "slug"
     t.integer  "tag"
+    t.boolean  "hide"
   end
 
   add_index "tintucs", ["slug"], name: "index_tintucs_on_slug", unique: true

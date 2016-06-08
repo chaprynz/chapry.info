@@ -1,5 +1,5 @@
 ActiveAdmin.register Tintuc do
-    permit_params :tag, :title, :content, :video, :description, :image, :shortdescription, :slug, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r
+    permit_params :tag, :title, :content, :video, :description, :image, :shortdescription, :slug, :hide, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r
 	
 	sortable tree: false,
 						sorting_attribute: :tag
@@ -20,6 +20,7 @@ ActiveAdmin.register Tintuc do
 			input :title, label: "Title"
 			input :description, label: "Description"
 			input :slug
+			input :hide
 			input :content, label: "Content",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
 			input :video, label: "Video",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
 			input :image, hint: f.tintuc.image? ? image_tag(tintuc.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")

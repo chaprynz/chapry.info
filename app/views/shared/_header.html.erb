@@ -35,9 +35,9 @@
       <li><%= link_to "Thoát", destroy_user_session_path, method: :delete, class: "w3-hover-green" %></i>
     <% end %>
     <% @categories.each do |category| %>
-		
+		<% if !category.logo? %>
 				<li><%= link_to category, class: "w3-hover-text-blue" do %><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> <%= category.name %><% end %></span></span></strong></p></li>
-				
+		<% end %>		
 		<% end %>
   </ul>
 </div>

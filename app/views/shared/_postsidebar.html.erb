@@ -18,7 +18,7 @@
 		</div>
 		
 		<% @posts.each do |post| %>
-			
+			<% if !post.hide? %>
 			<%= link_to [post.subcategory, post] do %>
 				<div class="w3-white w3-margin content w3-card-2 r w3-padding w3-container">
 					<div  class="w3-col s4 m4 ">
@@ -29,6 +29,7 @@
 					  <p><strong><%= post.title %></strong></p>
 					</div>
 				</div>
+			<% end %>
 			<% end %>
 		<% end %>
 		
