@@ -31,9 +31,7 @@ ActiveAdmin.register Category do
 			f.input :shortname
 			f.input :homelogo
 			f.input :image, hint: f.category.image? ? image_tag(category.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	
-			f.input :logo, hint: f.category.logo? ? image_tag(category.logo.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	
-			f.input :vocabulary
-			f.input :grammar
+			f.input :logo, hint: f.category.logo? ? image_tag(category.logo.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
 			f.input :a 
 			f.input :b
 			f.input :c

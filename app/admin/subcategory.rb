@@ -1,5 +1,5 @@
 ActiveAdmin.register Subcategory do
-    permit_params :name, :image, :logo, :shortdescription, :description, :category_id, :slug, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r, :area1, :area2, :area3, :area4, :area5, :area6, :area1header, :area2header, :area3header, :area4header, :area5header, :area6header
+    permit_params :name, :image, :logo, :shortdescription, :description, :category_id, :slug, :tag, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r, :area1, :area2, :area3, :area4, :area5, :area6, :area1header, :area2header, :area3header, :area4header, :area5header, :area6header
     
     sortable tree: false,
 						sorting_attribute: :tag
