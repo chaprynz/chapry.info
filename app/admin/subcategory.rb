@@ -27,6 +27,7 @@ ActiveAdmin.register Subcategory do
 		f.inputs do
 			f.input :category
 			f.input :name
+			f.input :shortdescription
 			f.input :slug
 			f.input :description
 			f.input :image, hint: f.subcategory.image? ? image_tag(subcategory.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	

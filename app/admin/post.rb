@@ -20,6 +20,7 @@ ActiveAdmin.register Post do
 	form do |f|
 		f.inputs do
 			input :subcategory, label: "Subcategory"
+			input :shortdescription, label: "shortdescription"
 			input :title, label: "Title"
 			input :slug, label: "Slug"
 			input :hide, label: "Hide"
