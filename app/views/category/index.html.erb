@@ -39,6 +39,23 @@
 			<div style="margin-bottom:30px" class="w3-container w3-padding">
 				<div class="w3-padding w3-container"><%= link_to tintuc_index_path do %><button style="background:#263238" class="w3-btn">Daily <i class="fa fa-plus" aria-hidden="true"></i><button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></button><% end %></div>
 					<% @tintucs.each do |tintuc| %>
+					<% if tintuc.d %>
+						<%= link_to tintuc do %>
+						<div class="w3-container w3-padding">
+							<div class="w3-card-2 w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+								<div style="opacity:0.8" class=" w3-container w3-white w3-display-bottomright w3-padding-small ">
+									<h3><strong><%= tintuc.title %></strong></h3>
+								</div>
+								<div style="opacity:0.8" class=" w3-container w3-red w3-display-topleft w3-padding-small ">
+									<h3><strong><%= tintuc.description %></strong></h3>
+								</div>
+							</div>
+						</div>
+						<% end %>
+					<% end %>	
+					<% end %>
+					<% @tintucs.each do |tintuc| %>
 						<% if tintuc.a %>
 						<%= link_to tintuc do %>
 							<div class="w3-padding  w3-col l4 m6">
@@ -52,7 +69,7 @@
 									    <div style="background:#2C2453;color:white" class=" w3-padding w3-display-topright"><%= tintuc.description %></div>
 									</div>
 								</div>
-							</div>	
+							</div>
 						<% end %>
 						<% end %>
 					<% end %>
