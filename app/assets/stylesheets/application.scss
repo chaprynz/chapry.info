@@ -21,6 +21,11 @@ a {
     
 }
 
+.cartab .active {
+    border:none;display:inline-block;outline:0;padding:2px 6px;vertical-align:middle;overflow:hidden;text-decoration:none!important;color:#fff;background-color:#a8182f;text-align:center;cursor:pointer;white-space:nowrap;
+    
+}
+
 nav a.active {
    background: black;
   color: green;
@@ -35,7 +40,6 @@ img {
 .videoWrapper {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
 	height: 0;
 }
 
@@ -135,8 +139,6 @@ img {
 
 
 body {
-	
-    background: url(https://s3.amazonaws.com/chaprydeploy/henry.png);
    
 }
 
@@ -151,6 +153,15 @@ body {
   max-width:360px!important;
   margin-left: 120px;
 } 
+
+form.gsc-search-box {
+    font-size: 13px;
+    margin-top: 8px!important;
+    margin-right: 0;
+    margin-bottom: 4px;
+    margin-left: 0;
+    width: 100%;
+}
 
 .gs-result .gs-title, .gs-result .gs-title * {
   margin-bottom:16px!important;

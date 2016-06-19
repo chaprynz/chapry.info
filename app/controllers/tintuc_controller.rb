@@ -1,12 +1,8 @@
 class TintucController < ApplicationController
-  def index
-     @tintucs = Tintuc.all.order(:tag).page(params[:page]).per(25)
-     @categories = Category.all
-  end
-
   def show
+    category = Category.find(params[:category_id])
     @tintuc = Tintuc.find(params[:id])
-    @tintucs = Tintuc.all
+    @tintucs = category.tintucs.order(created_at: :desc).page(params[:page]).per(7)
     @categories = Category.all
   end
 end

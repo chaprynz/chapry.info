@@ -6,6 +6,7 @@
   <meta property="fb:pages" content="290275247971028" />
   <link rel="icon" href="https://s3-ap-southeast-1.amazonaws.com/chaprycms/websiite+logo/32x32" sizes="32x32">
   <link rel="icon" href="https://s3-ap-southeast-1.amazonaws.com/chaprycms/websiite+logo/196x196" sizes="196x196">
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -26,23 +27,11 @@
 
 <script>
 function w3_open() {
-    document.getElementsByClassName("w3-sidenav")[0].style.width = "300px";
-    document.getElementsByClassName("w3-sidenav")[0].style.textAlign = "center";
-    document.getElementsByClassName("w3-sidenav")[0].style.fontSize = "40px";
-    document.getElementsByClassName("w3-sidenav")[0].style.paddingTop = "10%";
+    document.getElementsByClassName("w3-sidenav")[0].style.width = "100%";
     document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
 }
 function w3_close() {
     document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
-}
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
 }
 </script>
 <div id="fb-root"></div>

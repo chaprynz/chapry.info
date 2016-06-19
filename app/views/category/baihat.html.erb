@@ -1,0 +1,751 @@
+<% content_for :head do %>
+	<title>Chapry.com</title>
+	<!-- Open Graph data -->
+	<meta property="og:site_name" content="chapry">
+	<meta property="fb:app_id" content="984512708308216"></meta>
+	<meta property="og:url" content="<%= request.original_url %>"></meta>
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="chapry.com | Học Tiếng Anh The Fun Way">
+	<meta property="og:description" content="Video Clip, Tin Tức, Trò Chơi, Bài Hát">
+	<meta property="og:image" content="https://s3-ap-southeast-1.amazonaws.com/chaprycms/logo1">
+<% end %>
+
+<%= render partial: "shared/header" %>
+<%= render partial: "shared/search" %>
+
+<!-- DESKTOP -->
+<!-- TOP AD DESKTOP-->
+<div class="w3-dark-grey w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px;margin-bottom:10px">
+			<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+5.png"  style="">	
+		</div>
+	</div>
+</div>
+<!-- A  DESKTOP-->
+<div class="w3-container w3-hide-medium w3-hide-small w3-animate-opacity">
+  <% @tintucs.each do |tintuc| %>
+	  <% if tintuc.musica %>
+		  <%= link_to [tintuc.category, tintuc] do %>
+		  	<div class="w3-col l4">
+				<div class="w3-display-container">
+					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				    <div style="margin-left:50px;font-family: 'Raleway', sans-serif;font-size:1.2rem;line-height:1.2;color:white" class="w3-hover-opacity w3-padding w3-display-bottomleft">
+				    	<p><%= raw tintuc.description %></p>
+				    </div>
+				</div>	
+			</div>
+		  <% end %>
+	  <% end %>
+  <% end %>
+</div>
+
+
+<!-- TOPMENU DESKTOP-->
+<%= render partial: "shared/categorytab" %>
+
+<!-- FACEBOOK LIKE-->
+<div class="w3-hide-medium w3-hide-small w3-container">
+	<div style="max-width:1260px;margin:auto" class="w3-main" >
+		<div style="margin-left:50px" class="w3-container">
+			<div style="" class="w3-container">
+				<div class="fb-like" data-href="https://www.facebook.com/chaprynz" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>Kết Nối Trên FaceBook
+			</div>	
+		</div>	
+	</div>	
+</div>
+
+<!-- B DESKTOP-->
+<div style="max-width:1260px;margin:auto" class="w3-hide-medium w3-hide-small w3-main" >
+	<div style="margin-left:50px" class="w3-container">
+		<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicb %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+		<% @tintucs.each do |tintuc| %>
+			<% if tintuc.musicb %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col l2">
+						<div class="w3-margin-right content">
+							<div class="w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+			  					<p><%= tintuc.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- C DESKTOP-->
+<div class="w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicc %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+			<% @tintucs.each do |tintuc| %>
+				<% if tintuc.musicc %>
+					<%= link_to [tintuc.category, tintuc] do %>
+						<div class="w3-col l2">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag tintuc.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+				  					<p><%= tintuc.title %></p>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- D  DESKTOP-->
+<div class="w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicd %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+			<% @tintucs.each do |tintuc| %>
+				<% if tintuc.musicd %>
+					<%= link_to [tintuc.category, tintuc] do %>
+						<div class="w3-col l2">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag tintuc.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+				  					<p><%= tintuc.title %></p>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- MIDDLE LONG AD-->
+<div class="w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px">
+			<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+4.png"  style="width:100%">	
+		</div><br>
+	</div>
+</div>
+
+<!-- E DESKTOP-->
+<div class="w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.music %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+			<% @subcategories.each do |subcategory| %>
+				<% if subcategory.music %>
+					<%= link_to [subcategory.category, subcategory] do %>
+						<div class="w3-col l2">
+							<div style="line-height:1.2;font-size:14px" class="w3-margin-right w3-margin-bottom w3-center w3-hover-shadow w3-padding-small w3-dark-blue w3-container">
+			  					<p><%= subcategory.name %></p>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- F 6-->
+<div class="w3-dark-white w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicf %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+			<% @tintucs.each do |tintuc| %>
+				<% if tintuc.musicf %>
+					<%= link_to [tintuc.category, tintuc] do %>
+						<div class="w3-col l2">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag tintuc.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+				  					<p><%= tintuc.title %></p>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- G DESKTOP 6-->
+<div class="w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicg %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+			<% @tintucs.each do |tintuc| %>
+				<% if tintuc.musicg %>
+					<%= link_to [tintuc.category, tintuc] do %>
+						<div class="w3-col l2">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag tintuc.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+				  					<p><%= tintuc.title %></p>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- H DESKTOP 6-->
+<div class="w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musich %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+			<% @tintucs.each do |tintuc| %>
+				<% if tintuc.musich %>
+					<%= link_to [tintuc.category, tintuc] do %>
+						<div class="w3-col l2">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag tintuc.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+				  					<p><%= tintuc.title %></p>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- BOTTOM ADS DESKTOP-->
+<div class="w3-hide-medium w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-margin-top w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div class="w3-col l3">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+1.png">
+				</div>
+		 	</div>
+		 	<div class="w3-col l3">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+2.png">
+				</div>
+		 	</div>
+		 	<div class="w3-col l3">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+2.png">
+				</div>
+		 	</div>
+		 	<div class="w3-col l3">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+3.png">
+				</div>
+		 	</div>
+		 </div> 
+	</div>
+</div>
+
+
+<!-- IPAD-->
+<!-- TOP AD IPAD -->
+<div class="w3-dark-grey w3-hide-large w3-hide-small w3-main">
+	<div style="margin-left:50px">
+		<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+6.png"  style="width:100%">	
+	</div>
+</div>
+
+<!-- A IPAD -->
+<div class="w3-hide-large w3-hide-small w3-black w3-container">
+	<div style="margin-left:50px;font-family: 'Raleway', sans-serif" class="w3-container w3-hide-large w3-hide-small w3-animate-opacity">
+	  <% @tintucs.each do |tintuc| %>
+		  <% if tintuc.ipadmusic %>
+		  <%= link_to [tintuc.category, tintuc] do %>
+		  	<div class="w3-col m12 ">
+				<div class="w3-display-container">
+					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				    <div style="font-family: 'Raleway', sans-serif;font-size:1.2rem;line-height:1.2;color:white" class="w3-hover-opacity w3-padding w3-display-bottomleft">
+				    	<p><%= raw tintuc.description %></p>
+				    </div>
+				</div>	
+			</div>
+		  <% end %>
+		  <% end %>
+	  <% end %>
+	</div>
+</div>
+
+<!-- TOPMENU IPAD -->
+<div style="font-family: 'Raleway', sans-serif;margin-left:50px" class="cartab w3-center w3-hide-large w3-hide-small w3-container">
+	<%= link_to "Home", root_path, class: "w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Video", video_path, class: "w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Tin Tức", news_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Từ Vựng", tuvung_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Trò Chơi", trochoi_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Âm Nhạc", baihat_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-dark-grey w3-btn" %>
+</div>
+
+<!-- FACEBOOK LIKE IPAD -->
+<div class="w3-hide-large w3-hide-small w3-container">
+	<div style="max-width:1260px;margin:auto" class="w3-main" >
+		<div style="margin-left:50px" class="w3-container">
+			<div style="" class="w3-container">
+				<div class="fb-like" data-href="https://www.facebook.com/chaprynz" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>Kết Nối Trên FaceBook
+			</div>	
+		</div>	
+	</div>	
+</div>
+
+<!-- B IPAD -->
+<div style="margin-left:50px" class="w3-hide-large w3-hide-small w3-container">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicb %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.musicb %>
+		<%= link_to [tintuc.category, tintuc] do %>
+			<div class="w3-col m3">
+				<div class="w3-white w3-margin-right content">
+					<div class=" w3-display-container">
+						<%= image_tag tintuc.image.url, style: "width:100%" %>
+					</div>
+					<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+	  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+	  					<p><%= tintuc.title %></p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- C IPAD -->
+<div class="w3-container w3-hide-large w3-hide-small">
+	<div style="margin-left:50px;font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicc %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<div style="margin-left:50px" class="w3-container">
+		<% @tintucs.each do |tintuc| %>
+			<% if tintuc.musicc %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div class=" w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p><%= tintuc.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!--D IPAD -->
+<div class="w3-container w3-hide-large w3-hide-small">
+	<div style="margin-left:50px;font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicd %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<div style="margin-left:50px" class="w3-container">
+		<% @tintucs.each do |tintuc| %>
+			<% if tintuc.musicd %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div class=" w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p><%= tintuc.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- MIDDLE AD-->
+<div class="w3-hide-large w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px">
+			<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+4.png"  style="width:100%">	
+		</div><br>
+	</div>
+</div>
+
+<!-- E IPAD -->
+<div class="w3-container w3-hide-large w3-hide-small">
+	<div style="margin-left:50px;font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.music %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<div style="margin-left:50px" class="w3-container">
+		<% @subcategories.each do |subcategory| %>
+			<% if subcategory.music %>
+				<%= link_to [subcategory.category, subcategory] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div style="min-height:90px;line-height:1.2;font-size:14px" class="w3-margin-bottom w3-padding w3-dark-blue w3-container">
+			  					<p><%= subcategory.name %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- F  IPAD -->
+<div class="w3-container w3-hide-large w3-hide-small">
+	<div style="fmargin-left:50px;font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicf %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<div style="margin-left:50px" class="w3-container">
+		<% @tintucs.each do |tintuc| %>
+			<% if tintuc.musicf %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div class=" w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p><%= tintuc.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- G IPAD -->
+<div class="w3-container w3-hide-large w3-hide-small">
+	<div style="margin-left:50px;font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicg %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<div style="margin-left:50px" class="w3-container">
+		<% @tintucs.each do |tintuc| %>
+			<% if tintuc.musicg %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div class=" w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+								<div class="w3-red w3-padding w3-display-bottomleft"><i class="fa fa-play" aria-hidden="true"></i></div>
+							</div>
+							<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p><%= tintuc.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- G IPAD -->
+<div class="w3-container w3-hide-large w3-hide-small">
+	<div style="margin-left:50px;font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musich %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<div style="margin-left:50px" class="w3-container">
+		<% @tintucs.each do |tintuc| %>
+			<% if tintuc.musich %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div class=" w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+								<div class="w3-red w3-padding w3-display-bottomleft"><i class="fa fa-play" aria-hidden="true"></i></div>
+							</div>
+							<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p><%= tintuc.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!--BOTTOM AD IPAD-->
+<div class="w3-light-blue w3-hide-large w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<div class="w3-col m6">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+1.png">
+				</div>
+		 	</div>
+		 	<div class="w3-col m6">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+2.png">
+				</div>
+		 	</div>
+		 	<div class="w3-col m6">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+2.png">
+				</div>
+		 	</div>
+		 	<div class="w3-col m6">
+				<div style="min-height:300px" class="w3-margin-right content">
+					<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+3.png">
+				</div>
+		 	</div>
+		 </div> 
+	</div>
+</div>
+
+<!-- PHONE -->
+<!-- TOP AD PHONE-->
+<div style="margin-top:50px" class="w3-padding w3-dark-grey w3-hide-large w3-hide-medium w3-main">
+	<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+7.jpg"  style="width:100%">	
+</div>
+
+<!-- A PHONE-->
+<div class="w3-container w3-hide-large w3-hide-medium w3-animate-opacity">
+  <% @tintucs.each do |tintuc| %>
+	  <% if tintuc.ipadmusic %>
+		  <%= link_to [tintuc.category, tintuc] do %>
+		  	<div class="w3-col m12 ">
+				<div class="w3-display-container">
+					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				    <div style="font-family: 'Raleway', sans-serif;font-size:1.2rem;line-height:1.2;color:white" class="w3-hover-opacity w3-padding w3-display-bottomleft">
+				    	<p><%= raw tintuc.description %></p>
+				    </div>
+				</div>	
+			</div>
+		  <% end %>
+	  <% end %>
+  <% end %>
+</div>
+
+<!-- TOPMENU PHONE-->
+<div style="font-family: 'Raleway', sans-serif" class="cartab w3-hide-large w3-hide-medium w3-container">
+	<%= link_to "Home", root_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+	
+	<%= link_to "Video", video_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+	
+	<%= link_to "Tin Tức", news_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Từ Vựng", tuvung_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Trò Chơi", trochoi_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Âm Nhạc", baihat_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+</div>
+
+<!-- FACEBOOK LIKE PHONE-->
+<div class="w3-hide-large w3-hide-medium w3-container">
+	<div style="max-width:1260px;margin:auto" class="w3-main" >
+		<div class="w3-container">
+			<div style="" class="w3-container">
+				<div class="fb-like" data-href="https://www.facebook.com/chaprynz" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>kết Nối Trên FaceBook
+			</div>	
+		</div>	
+	</div>	
+</div>
+
+<!-- B PHONE-->
+<div class="w3-hide-medium w3-hide-large w3-container">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicb %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.musicb %>
+		<%= link_to [tintuc.category, tintuc] do %>
+			<div class="w3-col w3-padding-small s6">
+				<div class="w3-container">
+					<%= image_tag tintuc.image.url, style: "width:100%" %>
+					<div style="min-height:60px;line-height:1.2;font-size:14px" class="w3-container">
+	  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+	  					<p><%= tintuc.title %></p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- C PHONE-->
+<div class="w3-hide-large w3-hide-medium w3-container w3-padding-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicc %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.musicc %>
+		<%= link_to [tintuc.category, tintuc] do %>
+			<div style="margin-bottom:10px" class="w3-container">
+				<div  class="w3-col s4 m4 ">
+  					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				</div>
+				<div style="min-height:100px;line-height:1.2;font-size:14px;padding-left:10px;" class=" w3-col s8 m8  w3-container">
+				  <p><%= tintuc.title %></p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- D PHONE-->
+<div class="w3-hide-large w3-hide-medium w3-container w3-padding-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicd %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.musicd %>
+		<%= link_to [tintuc.category, tintuc] do %>
+			<div style="margin-bottom:10px" class="w3-container">
+				<div  class="w3-col s4 m4 ">
+  					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				</div>
+				<div style="min-height:100px;line-height:1.2;font-size:14px;padding-left:10px;" class=" w3-col s8 m8  w3-container">
+				  <p><%= tintuc.title %></p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- MIDDLE AD-->
+<div class="w3-hide-large w3-hide-medium w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div>
+			<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+4.png"  style="width:100%">	
+		</div><br>
+	</div>
+</div>
+
+<!-- E PHONE-->
+<div class="w3-hide-large w3-hide-medium w3-container w3-padding-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.music %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @subcategories.each do |subcategory| %>
+		<% if subcategory.music %>
+		<%= link_to [subcategory.category, subcategory] do %>
+			<div style="margin-bottom:10px" class="w3-container">
+				<div  class="w3-col s4 m4 ">
+  					<%= image_tag subcategory.image.url, style: "width:100%" %>
+				</div>
+				<div style="min-height:100px;line-height:1.2;font-size:14px;padding-left:10px;" class=" w3-col s8 m8  w3-container">
+				  <p><%= subcategory.name %></p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- F PHONE-->
+<div class="w3-hide-large w3-hide-medium w3-container w3-padding-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicf %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.musicf %>
+		<%= link_to [tintuc.category, tintuc] do %>
+			<div style="margin-bottom:10px" class="w3-container">
+				<div  class="w3-col s4 m4 ">
+  					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				</div>
+				<div style="min-height:100px;line-height:1.2;font-size:14px;padding-left:10px;" class=" w3-col s8 m8  w3-container">
+				  <p><%= tintuc.title %></p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- G PHONE-->
+<div class="w3-dark-grey w3-hide-large w3-hide-medium w3-container w3-padding-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musicg %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.musicg %>
+		<%= link_to [tintuc.category, tintuc] do %>
+			<div style="margin-bottom:10px" class="w3-container">
+				<div  class="w3-col s4 m4 w3-display-container">
+  					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				</div>
+				<div style="min-height:100px;line-height:1.2;font-size:14px;padding-left:10px;" class=" w3-col s8 m8  w3-container">
+				  <p><%= tintuc.title %></p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- H PHONE-->
+<div class="w3-hide-large w3-hide-medium w3-container w3-padding-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.musich %><%= link_to category do %><div style="font-size:1.4rem"><%= category.name %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.musich %>
+		<%= link_to [tintuc.category, tintuc] do %>
+			<div style="margin-bottom:10px" class="w3-container">
+				<div  class="w3-col s4 m4 w3-display-container">
+  					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				</div>
+				<div style="min-height:100px;line-height:1.2;font-size:14px;padding-left:10px;" class=" w3-col s8 m8  w3-container">
+				  <p><%= tintuc.title %></p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- BOTTOM AD PHONE-->
+<div class="w3-margin-bottom w3-hide-large w3-hide-medium w3-main">
+	<div class="w3-container">
+		<div class="w3-col s6">
+			<div class="w3-margin-right content">
+				<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+1.png">
+			</div>
+	 	</div>
+	 	<div class="w3-col s6">
+			<div class="w3-margin-right content">
+				<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+2.png">
+			</div>
+	 	</div>
+	 	<div class="w3-col s6">
+			<div class="w3-margin-right content">
+				<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+2.png">
+			</div>
+	 	</div>
+	 	<div class="w3-col s6">
+			<div class="w3-margin-right content">
+				<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+3.png">
+			</div>
+	 	</div>
+	 </div> 
+</div>
+
+<%= render partial: "shared/footer" %>
+
+<script>
+for (var i = 0; i < document.links.length; i++) {
+    if (document.links[i].href == document.URL) {
+        document.links[i].className = 'active';
+    }
+}
+</script>

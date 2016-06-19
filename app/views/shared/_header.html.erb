@@ -4,7 +4,7 @@
  <ul class="w3-navbar w3-theme-d2 w3-left-align w3-large">
   
   <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
-    <a class="w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a class="w3-hover-white w3-large w3-theme-d2" onclick="w3_open()"><i class="fa fa-bars"></i></a>
   </li>
   <li style="font-family: 'Cabin Sketch', cursive;font-weight:900"><%= link_to  root_path, class: "w3-hover-green  w3-container", style: "background:#A8182F;color:white" do %>chapry<% end %></li>
   
@@ -24,7 +24,7 @@
  
 </div>
 
-<!-- Navbar on small screens -->
+<!-- Navbar on small screens 
 <div  id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="max-height:500px;position:fixed;overflow:scroll;z-index:99;margin-top:43px;">
   <ul style="color:white;background:#191919" class="w3-navbar w3-padding w3-left-align w3-large w3-theme">
     <% if(!user_signed_in?) %>
@@ -40,7 +40,41 @@
 		<% end %>		
 		<% end %>
   </ul>
-</div>
+  <p><strong>Follow Us</strong></p>
+	 <a style="background:#A8182F" class="w3-btn-floating" href="https://www.facebook.com/chaprynz/" title="Facebook"><i class="fa fa-facebook"></i></a>
+  
+      <a style="background:#A8182F" class="w3-btn-floating" href="https://plus.google.com/u/1/118075415996247592824?hl=en" title="Google +"><i class="fa fa-google-plus"></i></a>
+     <p style="color:#A8182F"><strong>Contact: chaprynz@chapry.com</strong></p>
+</div>-->
 
 
-
+<nav class="w3-sidenav" style="display:none">
+  <a href="javascript:void(0)"   onclick="w3_close()"  class="w3-closenav w3-large">Tắt &times;</a>
+  
+  <div class="fb-like" data-href="https://www.facebook.com/chaprynz" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  
+  <ul style="color:white;background:#191919" class="w3-navbar w3-padding w3-left-align w3-large w3-theme">
+    <% if(!user_signed_in?) %>
+       <li><%= link_to "Đăng Nhập", new_user_session_path, class: "w3-hover-green" %></li>
+    <% else%>
+      <li><%= image_tag avatar_url(current_user), style: "width:20%", class: "w3-small  w3-round" %>&nbsp; <%= current_user.name %></li>  
+      <li><%= link_to "Tài Khoản", edit_user_registration_path, class: "w3-hover-green" %></i>
+      <li><%= link_to "Thoát", destroy_user_session_path, method: :delete, class: "w3-hover-green" %></i>
+    <% end %>
+    <% @categories.each do |category| %>
+		<% if !category.logo? %>
+				<li><%= link_to category, class: "w3-hover-text-blue" do %><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> <%= category.name %><% end %></span></span></strong></p></li>
+		<% end %>		
+		<% end %>
+		
+		<p><strong>Follow Us</strong></p>
+	 <a style="background:#A8182F" class="w3-btn-floating" href="https://www.facebook.com/chaprynz/" title="Facebook"><i class="fa fa-facebook"></i></a>
+  
+      <a style="background:#A8182F" class="w3-btn-floating" href="https://plus.google.com/u/1/118075415996247592824?hl=en" title="Google +"><i class="fa fa-google-plus"></i></a>
+     <p style="color:#A8182F"><strong>Contact: chaprynz@chapry.com</strong></p>
+     <p style="color:#A8182F"><strong>Contact: chaprynz@chapry.com</strong></p>
+  </ul>
+  
+  
+  
+</nav>

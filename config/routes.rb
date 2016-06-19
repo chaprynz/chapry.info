@@ -1,26 +1,32 @@
 Rails.application.routes.draw do
-  
-
-  get 'tintuc/index'
-
-  get 'tintuc/show'
-
+ 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
   resources :category do
-  	  resources :subcategory, show: [:only] 
+  	  resources :tintuc, show: [:only] 
+  	  resources :subcategory, show: [:only]
+    end
+    
+    resources :category do
+  	  resources :subcategory, show: [:only]
     end
     
      resources :subcategory do
-        resources :post
+        resources :post, show: [:only]
       end
+      
+      resources :tintuc
+    
     
     root "category#index"
-    
-    resources :tintuc
    
-    get '/tintuc' => 'tintuc#index'
+    get '/news' => 'category#news'
+    get '/video' => 'category#video'
+    get '/tuvung' => 'category#tuvung'
+    get '/trochoi' => 'category#trochoi'
+    get '/baihat' => 'category#baihat'
+    get '/nguphap' => 'category#nguphap'
     
 
 end

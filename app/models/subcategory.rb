@@ -1,7 +1,6 @@
 class Subcategory < ActiveRecord::Base
     belongs_to :category
     has_many :posts
-    
     extend FriendlyId
 	friendly_id :slug, use: [:slugged, :finders]
     

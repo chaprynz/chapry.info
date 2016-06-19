@@ -1,5 +1,7 @@
 ActiveAdmin.register Subcategory do
-    permit_params :name, :image, :logo, :shortdescription, :description, :category_id, :slug, :tag, :a, :b, :c, :d, :e, :f, :g, :h, :i, :j, :k, :l, :m, :n, :o, :p, :q, :r, :area1, :area2, :area3, :area4, :area5, :area6, :area1header, :area2header, :area3header, :area4header, :area5header, :area6header
+    permit_params :name, :image, :logo, :description, :category_id, :slug, :tag,
+    :video, :news, :vocabulary, :quiz, :music, :grammar
+    
     
     sortable tree: false,
 						sorting_attribute: :tag
@@ -27,44 +29,37 @@ ActiveAdmin.register Subcategory do
 		f.inputs do
 			f.input :category
 			f.input :name
-			f.input :shortdescription
 			f.input :slug
 			f.input :description
 			f.input :image, hint: f.subcategory.image? ? image_tag(subcategory.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	
 			f.input :logo, hint: f.subcategory.logo? ? image_tag(subcategory.logo.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")	
-			f.input :a 
-			f.input :b
-			f.input :c
-			f.input :d
-			f.input :e
-			f.input :f
-			f.input :g
-			f.input :h
-			f.input :i 
-			f.input :j
-			f.input :k
-			f.input :l
-			f.input :m
-			f.input :n
-			f.input :o
-			f.input :p
-			f.input :q
-			f.input :r
-			f.input :area1
-			f.input :area2
-			f.input :area3
-			f.input :area4
-			f.input :area5
-			f.input :area6
-			f.input :area1header
-			f.input :area2header
-			f.input :area3header
-			f.input :area4header
-			f.input :area5header
-			f.input :area6header
+			f.input :video
+			f.input :news
+			f.input :vocabulary
+			f.input :quiz
+			f.input :music
+			f.input :grammar
 		end
 		f.actions
 	end
-
+	
+	scope :video do |subcategories|
+		 subcategories.where(:video => true)
+	end
+	scope :news do |subcategories|
+		 subcategories.where(:news => true)
+	end
+	scope :vocabulary do |subcategories|
+		 subcategories.where(:vocabulary => true)
+	end
+	scope :quiz do |subcategories|
+		 subcategories.where(:quiz => true)
+	end
+	scope :music do |subcategories|
+		 subcategories.where(:music => true)
+	end
+	scope :grammar do |subcategories|
+		 subcategories.where(:grammar => true)
+	end
 
 end

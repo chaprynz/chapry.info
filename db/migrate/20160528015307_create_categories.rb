@@ -3,8 +3,6 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.string :name
       t.text :description
-      t.boolean :homelogo
-
       t.timestamps null: false
     end
   end

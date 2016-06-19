@@ -31,7 +31,7 @@
 			<div style="max-width:600px;margin:auto;" class="w3-container w3-padding">
 				<% @tintucs.each do |tintuc| %>
 					<% if tintuc.c %>
-					<%= link_to tintuc do %>
+					<%= link_to [tintuc.category, tintuc] do %>
 							<div style="" class="w3-card-2 w3-margin w3-padding w3-white w3-container">
 								<div style="" class="w3-col s4 m4 ">
 				  					<%= image_tag tintuc.image.url, style: "width:100%" %>

@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
+    has_many :tintucs
     has_many :subcategories
     extend FriendlyId
 	friendly_id :slug, use: [:slugged, :finders]
