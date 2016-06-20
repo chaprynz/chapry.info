@@ -43,24 +43,28 @@
 	</div>	
 </div>
 
+<%= @subcategory.name %>
 <!-- CONTENT DESKTOP-->
 <div class="w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><div style="font-size:1.4rem"><%= @subcategory.name %></div></div>
 			<% @posts.each do |post| %>
-				<%= link_to [post.subcategory, post] do %>
-					<div class="w3-col l2">
-						<div class="w3-margin-right content">
-							<div class="w3-display-container">
-								<%= image_tag post.image.url, style: "width:100%" %>
-							</div>
-							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
-			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
-			  					<p><%= post.title %></p>
+				<% if !post.hidepage? %>
+					<%= link_to [post.subcategory, post] do %>
+						<div class="w3-col l2">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag post.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
+				  					<p><%= post.title %></p>
+								</div>
 							</div>
 						</div>
-					</div>
-				<% end %>
+					<% end %>
+				<% end %>	
 			<% end %>
 		</div>
 	</div>
@@ -106,19 +110,22 @@
 <div class="w3-hide-large w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
+			<div style="font-family: 'Raleway', sans-serif" class="w3-container"><div style="font-size:1.4rem"><%= @category.name %></div></div>
 			<% @posts.each do |post| %>
-				<%= link_to [post.subcategory, post] do %>
-					<div class="w3-col m3">
-						<div class="w3-margin-right content">
-							<div class="w3-display-container">
-								<%= image_tag post.image.url, style: "width:100%" %>
-							</div>
-							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
-			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
-			  					<p><%= post.title %></p>
+				<% if !post.hide? %>
+					<%= link_to [post.subcategory, post] do %>
+						<div class="w3-col m3">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag post.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
+				  					<p><%= post.title %></p>
+								</div>
 							</div>
 						</div>
-					</div>
+					<% end %>
 				<% end %>
 			<% end %>
 		</div>
@@ -173,18 +180,20 @@
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div class="w3-container">
 			<% @posts.each do |post| %>
-				<%= link_to [post.subcategory, post] do %>
-					<div class="w3-col s6">
-						<div class="w3-margin-right content">
-							<div class="w3-display-container">
-								<%= image_tag post.image.url, style: "width:100%" %>
-							</div>
-							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
-			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
-			  					<p><%= post.title %></p>
+				<% if !post.hide? %>
+					<%= link_to [post.subcategory, post] do %>
+						<div class="w3-col s6">
+							<div class="w3-margin-right content">
+								<div class="w3-display-container">
+									<%= image_tag post.image.url, style: "width:100%" %>
+								</div>
+								<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+				  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
+				  					<p><%= post.title %></p>
+								</div>
 							</div>
 						</div>
-					</div>
+					<% end %>
 				<% end %>
 			<% end %>
 		</div>

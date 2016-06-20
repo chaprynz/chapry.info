@@ -42,18 +42,20 @@
 	<div style="margin-left:50px" class="w3-container">
 		<div style="font-family: 'Raleway', sans-serif" class="w3-container"><div style="font-size:1.4rem"><%= @category.name %></div></div>
 		<% @tintucs.each do |tintuc| %>
-			<%= link_to [tintuc.category, tintuc] do %>
-				<div class="w3-col l2">
-					<div class="w3-margin-right content">
-						<div class="w3-display-container">
-							<%= image_tag tintuc.image.url, style: "width:100%" %>
-						</div>
-						<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
-		  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
-		  					<p><%= tintuc.title %></p>
+			<% if !tintuc.hide? %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col l2">
+						<div class="w3-margin-right content">
+							<div class="w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+			  					<p><%= tintuc.title %></p>
+							</div>
 						</div>
 					</div>
-				</div>
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>
@@ -154,18 +156,20 @@
 	<div style="margin-left:50px" class="w3-container">
 		<div style="font-family: 'Raleway', sans-serif" class="w3-container"><div style="font-size:1.4rem"><%= @category.name %></div></div>
 		<% @tintucs.each do |tintuc| %>
-			<%= link_to [tintuc.category, tintuc] do %>
-				<div class="w3-col m3">
-					<div class="w3-margin-right content">
-						<div class="w3-display-container">
-							<%= image_tag tintuc.image.url, style: "width:100%" %>
-						</div>
-						<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
-		  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
-		  					<p><%= tintuc.title %></p>
+			<% if !tintuc.hide? %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right content">
+							<div class="w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+			  					<p><%= tintuc.title %></p>
+							</div>
 						</div>
 					</div>
-				</div>
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>
@@ -266,18 +270,20 @@
 	<div class="w3-container">
 		<div style="font-family: 'Raleway', sans-serif" class="w3-container"><div style="font-size:1.4rem"><%= @category.name %></div></div>
 		<% @tintucs.each do |tintuc| %>
-			<%= link_to [tintuc.category, tintuc] do %>
-				<div class="w3-col s6">
-					<div class="w3-margin-right content">
-						<div class="w3-display-container">
-							<%= image_tag tintuc.image.url, style: "width:100%" %>
-						</div>
-						<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
-		  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
-		  					<p><%= tintuc.title %></p>
+			<% if !tintuc.hide? %>
+				<%= link_to [tintuc.category, tintuc] do %>
+					<div class="w3-col s6">
+						<div class="w3-margin-right content">
+							<div class="w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(tintuc.created_at)%> ago </p>
+			  					<p><%= tintuc.title %></p>
+							</div>
 						</div>
 					</div>
-				</div>
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>

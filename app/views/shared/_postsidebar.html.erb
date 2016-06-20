@@ -10,7 +10,7 @@
 	
 	<!-- RIGHTSIDE BOX RECOMENDED TINTUC DESKTOP-->
 	<% @posts.each do |post| %>
-		<% if !post.hide? %>
+		<% if !post.hidepage? %>
 			<%= link_to [post.subcategory, post] do %>
 				<div class="w3-margin-bottom r w3-container">
 					<div  class="w3-col s4 m4 ">
@@ -50,7 +50,7 @@
 <!-- PHONE -->
 <div class="w3-hide-medium w3-hide-large w3-container">
 	<% @posts.each do |post| %>
-		<% if !post.hide? %>
+		<% if !post.hidepage? %>
 			<%= link_to [post.subcategory, post] do %>
 				<div class="w3-col w3-padding-small s6">
 					<div class="w3-container">
