@@ -29,7 +29,7 @@
 <div class="w3-container w3-hide-large w3-hide-small">
 	<div class="w3-container">
 		<% @posts.each do |post| %>
-			<% if !post.hide? %>
+			<% if !post.hidepage? %>
 				<%= link_to [post.subcategory, post] do %>
 					<div class="w3-col m3">
 						<div class="w3-margin-right">

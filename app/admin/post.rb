@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  	permit_params :title, :image, :content, :subcategory_id, :video, :description, :slug, :tag, :hide, :code, :socialshare
+  	permit_params :title, :image, :content, :subcategory_id, :video, :description, :slug, :tag, :hidepage, :code, :socialshare, :topic
 	
 	sortable tree: false,
 						sorting_attribute: :tag
@@ -23,7 +23,7 @@ ActiveAdmin.register Post do
 			input :title, label: "Title"
 			input :description, label: "Description"
 			input :slug, label: "Slug"
-			input :hide, label: "Hide"
+			input :hidepage, label: "Hide"
 			input :content, label: "Content",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
 			input :code
 			input :video, label: "Video",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
@@ -34,7 +34,7 @@ ActiveAdmin.register Post do
 		actions
 	end
 	
-	scope :hide do |posts|
-		 posts.where(:hide => true)
+	scope :hidepage do |posts|
+		 posts.where(:hidepage => true)
 	end
 end

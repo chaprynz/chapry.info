@@ -1,6 +1,6 @@
 ActiveAdmin.register Tintuc do
-    permit_params :tag, :title, :content, :video, :category_id, :description, :image, :slug, :hide, :code, :socialshare,
-    :a, :b, :c, :d, :e, :f, :g, :h,
+    permit_params :tag, :title, :content, :video, :category_id, :description, :image, :slug, :hidepage, :code, :socialshare,
+    :a, :b, :c, :d, :e, :f, :g, :h, :r,
     :videoa, :videob, :videoc, :videod, :videoe, :videof, :videog, :videoh,
     :newsa, :newsb, :newsc, :newsd, :newse, :newsf, :newsg, :newsh,
     :vocabularya, :vocabularyb, :vocabularyc, :vocabularyd, :vocabularye, :vocabularyf, :vocabularyg, :vocabularyh,
@@ -28,7 +28,7 @@ ActiveAdmin.register Tintuc do
 		f.inputs do
 			input :title, label: "Title"
 			input :slug
-			input :hide
+			input :hidepage
 			input :description, label: "Description",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
 			input :category, label: "Category"
 			input :content, label: "Content",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
@@ -320,5 +320,8 @@ ActiveAdmin.register Tintuc do
 	end
 	scope :ipadgrammar do |tintucs|
 		 tintucs.where(:ipadgrammar => true)
+	end
+	scope :hidepage do |tintucs|
+		 tintucs.where(:hidepage => true)
 	end
 end

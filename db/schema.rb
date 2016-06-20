@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620021447) do
+ActiveRecord::Schema.define(version: 20160620101705) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -192,6 +192,7 @@ ActiveRecord::Schema.define(version: 20160620021447) do
     t.string   "socialshare_content_type"
     t.integer  "socialshare_file_size"
     t.datetime "socialshare_updated_at"
+    t.boolean  "hidepage"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
@@ -352,6 +353,7 @@ ActiveRecord::Schema.define(version: 20160620021447) do
     t.string   "socialshare_content_type"
     t.integer  "socialshare_file_size"
     t.datetime "socialshare_updated_at"
+    t.boolean  "hidepage"
   end
 
   add_index "tintucs", ["category_id"], name: "index_tintucs_on_category_id"

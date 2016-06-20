@@ -10,7 +10,7 @@
 	
 	<!-- RIGHTSIDE BOX RECOMENDED TINTUC DESKTOP-->
 	<% @tintucs.each do |tintuc| %>
-			<% if !post.hide? %>
+			<% if !post.hidepage? %>
 				<%= link_to [tintuc.category, tintuc] do %>
 					<div class="w3-margin-bottom r w3-container">
 						<div  class="w3-col s4 m4 ">
