@@ -10,15 +10,17 @@
 	
 	<!-- RIGHTSIDE BOX RECOMENDED TINTUC DESKTOP-->
 	<% @posts.each do |post| %>
-		<%= link_to [post.subcategory, post] do %>
-			<div class="w3-margin-bottom r w3-container">
-				<div  class="w3-col s4 m4 ">
-	  				<%= image_tag post.image.url, style: "width:100%" %>
+		<% if !post.hide? %>
+			<%= link_to [post.subcategory, post] do %>
+				<div class="w3-margin-bottom r w3-container">
+					<div  class="w3-col s4 m4 ">
+		  				<%= image_tag post.image.url, style: "width:100%" %>
+					</div>
+					<div style="padding-left:10px;line-height:1.2;font-size:16px" class="w3-col s8 m8  w3-container">	
+					  <p><%= post.title %></p>
+					</div>
 				</div>
-				<div style="padding-left:10px;line-height:1.2;font-size:16px" class="w3-col s8 m8  w3-container">	
-				  <p><%= post.title %></p>
-				</div>
-			</div>
+			<% end %>
 		<% end %>
 	<% end %>
 </div>
@@ -27,17 +29,19 @@
 <div class="w3-container w3-hide-large w3-hide-small">
 	<div class="w3-container">
 		<% @posts.each do |post| %>
-			<%= link_to [post.subcategory, post] do %>
-				<div class="w3-col m3">
-					<div class="w3-margin-right">
-						<div class=" w3-display-container">
-							<%= image_tag post.image.url, style: "width:100%" %>
-						</div>
-						<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
-		  					<p><%= post.title %></p>
+			<% if !post.hide? %>
+				<%= link_to [post.subcategory, post] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div class=" w3-display-container">
+								<%= image_tag post.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p><%= post.title %></p>
+							</div>
 						</div>
 					</div>
-				</div>
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>
@@ -46,15 +50,17 @@
 <!-- PHONE -->
 <div class="w3-hide-medium w3-hide-large w3-container">
 	<% @posts.each do |post| %>
-		<%= link_to [post.subcategory, post] do %>
-			<div class="w3-col w3-padding-small s6">
-				<div class="w3-container">
-					<%= image_tag post.image.url, style: "width:100%" %>
-					<div style="min-height:60px;line-height:1.2;font-size:14px" class="w3-container">
-	  					<p><%= post.title %></p>
+		<% if !post.hide? %>
+			<%= link_to [post.subcategory, post] do %>
+				<div class="w3-col w3-padding-small s6">
+					<div class="w3-container">
+						<%= image_tag post.image.url, style: "width:100%" %>
+						<div style="min-height:60px;line-height:1.2;font-size:14px" class="w3-container">
+		  					<p><%= post.title %></p>
+						</div>
 					</div>
 				</div>
-			</div>
-		<% end %>
+			<% end %>
+		<% end %>	
 	<% end %>
 </div>

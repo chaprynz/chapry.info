@@ -33,4 +33,8 @@ ActiveAdmin.register Post do
 
 		actions
 	end
+	
+	scope :hide do |posts|
+		 posts.where(:hide => true)
+	end
 end
