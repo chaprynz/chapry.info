@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618230131) do
+ActiveRecord::Schema.define(version: 20160620021447) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -176,8 +176,8 @@ ActiveRecord::Schema.define(version: 20160618230131) do
     t.text     "content"
     t.text     "video"
     t.integer  "subcategory_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -188,6 +188,10 @@ ActiveRecord::Schema.define(version: 20160618230131) do
     t.boolean  "hide"
     t.text     "topic"
     t.text     "code"
+    t.string   "socialshare_file_name"
+    t.string   "socialshare_content_type"
+    t.integer  "socialshare_file_size"
+    t.datetime "socialshare_updated_at"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
@@ -257,8 +261,8 @@ ActiveRecord::Schema.define(version: 20160618230131) do
     t.text     "content"
     t.text     "description"
     t.text     "video"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -344,6 +348,10 @@ ActiveRecord::Schema.define(version: 20160618230131) do
     t.boolean  "ipadmusic"
     t.boolean  "ipadgrammar"
     t.text     "code"
+    t.string   "socialshare_file_name"
+    t.string   "socialshare_content_type"
+    t.integer  "socialshare_file_size"
+    t.datetime "socialshare_updated_at"
   end
 
   add_index "tintucs", ["category_id"], name: "index_tintucs_on_category_id"

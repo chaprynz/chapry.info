@@ -1,13 +1,13 @@
 <% content_for :head do %>
-	<title>Chapry.com</title>
+	<title><%= @subcategory.name %></title>
 	<!-- Open Graph data -->
 	<meta property="og:site_name" content="chapry">
 	<meta property="fb:app_id" content="984512708308216"></meta>
 	<meta property="og:url" content="<%= request.original_url %>"></meta>
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="chapry.com | Học Tiếng Anh The Fun Way">
-	<meta property="og:description" content="Video Clip, Tin Tức, Trò Chơi, Bài Hát">
-	<meta property="og:image" content="https://s3-ap-southeast-1.amazonaws.com/chaprycms/logo1">
+	<meta property="og:title" content="<%= @subcategory.name %>">
+	<meta property="og:description" content="<%= @subcategory.description %>">
+	<meta property="og:image" content="<%= @subcategory.image.url %>">
 <% end %>
 
 <%= render partial: "shared/header" %>
@@ -43,7 +43,7 @@
 	</div>	
 </div>
 
-<!-- E POSTS DESKTOP-->
+<!-- CONTENT DESKTOP-->
 <div class="w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
@@ -66,6 +66,139 @@
 	</div>
 </div>
 
+<!--  IPAD-->
+<!-- TOP AD IPAD -->
+<div class="w3-dark-grey w3-hide-large w3-hide-small w3-main">
+	<div style="margin-left:50px">
+		<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+6.png"  style="width:100%">	
+	</div>
+</div>
+
+<!-- TOPMENU IPAD -->
+<div style="font-family: 'Raleway', sans-serif;margin-left:50px" class="cartab w3-center w3-hide-large w3-hide-small w3-container">
+	<%= link_to "Home", root_path, class: "w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Video", video_path, class: "w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Tin Tức", news_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Từ Vựng", tuvung_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Trò Chơi", trochoi_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Âm Nhạc", baihat_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-dark-grey w3-btn" %>
+</div>
+
+<!-- FACEBOOK LIKE-->
+<div class="w3-hide-large w3-hide-small w3-container">
+	<div style="max-width:1260px;margin:auto" class="w3-main" >
+		<div style="margin-left:50px" class="w3-container">
+			<div style="" class="w3-container">
+				<div class="fb-like" data-href="https://www.facebook.com/chaprynz" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>Kết Nối Trên FaceBook
+			</div>	
+		</div>	
+	</div>	
+</div>
+
+<!-- CONTENT IPAD -->
+<div class="w3-hide-large w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px" class="w3-container">
+			<% @posts.each do |post| %>
+				<%= link_to [post.subcategory, post] do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right content">
+							<div class="w3-display-container">
+								<%= image_tag post.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
+			  					<p><%= post.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- BOTTOM AD-->
+<div class="w3-hide-large w3-hide-small w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div style="margin-left:50px">
+			<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+4.png"  style="width:100%">	
+		</div><br>
+	</div>
+</div>
+
+<!--  PHONE-->
+<!-- TOP AD PHONE-->
+<div style="margin-top:50px" class="w3-padding w3-dark-grey w3-hide-large w3-hide-medium w3-main">
+	<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+7.jpg"  style="width:100%">	
+</div>
+
+<!-- TOPMENU IPAD -->
+<div style="font-family: 'Raleway', sans-serif" class="cartab w3-hide-medium w3-hide-large w3-container">
+	<%= link_to "Home", root_path, class: "w3-margin-bottom w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Video", video_path, class: "w3-margin-bottom w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Tin Tức", news_path, class: "w3-margin-bottom w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Từ Vựng", tuvung_path, class: "w3-margin-bottom w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Trò Chơi", trochoi_path, class: "w3-margin-bottom w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Âm Nhạc", baihat_path, class: "w3-margin-bottom w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-margin-bottom w3-dark-grey w3-btn" %>
+</div>
+
+<!-- FACEBOOK LIKE-->
+<div class="w3-hide-large w3-hide-medium w3-container">
+	<div style="max-width:1260px;margin:auto" class="w3-main" >
+		<div class="w3-container">
+			<div style="" class="w3-container">
+				<div class="fb-like" data-href="https://www.facebook.com/chaprynz" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>Kết Nối Trên FaceBook
+			</div>	
+		</div>	
+	</div>	
+</div>
+
+<!-- CONTENT PHONE -->
+<div class="w3-hide-large w3-hide-medium w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div class="w3-container">
+			<% @posts.each do |post| %>
+				<%= link_to [post.subcategory, post] do %>
+					<div class="w3-col s6">
+						<div class="w3-margin-right content">
+							<div class="w3-display-container">
+								<%= image_tag post.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:150px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p style="margin-bottom:-10px!important;color:#9E8383;font-size:10px!important"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(post.created_at)%> ago </p>
+			  					<p><%= post.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<!-- BOTTOM AD-->
+<div class="w3-hide-large w3-hide-medium w3-main">
+	<div style="max-width:1260px;margin:auto" class="w3-container">
+		<div>
+			<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+4.png"  style="width:100%">	
+		</div><br>
+	</div>
+</div>
 
 <%= render partial: "shared/footer" %>
 

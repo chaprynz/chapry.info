@@ -1,5 +1,5 @@
 ActiveAdmin.register Tintuc do
-    permit_params :tag, :title, :content, :video, :category_id, :description, :image, :slug, :hide, :code,
+    permit_params :tag, :title, :content, :video, :category_id, :description, :image, :slug, :hide, :code, :socialshare,
     :a, :b, :c, :d, :e, :f, :g, :h,
     :videoa, :videob, :videoc, :videod, :videoe, :videof, :videog, :videoh,
     :newsa, :newsb, :newsc, :newsd, :newse, :newsf, :newsg, :newsh,
@@ -35,6 +35,7 @@ ActiveAdmin.register Tintuc do
 			input :code
 			input :video, label: "Video",  as: :wysihtml5, commands: [:bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :video, :source ], blocks: [:h1, :h2, :h3, :h4, :h5, :h6, :p]
 			input :image, hint: f.tintuc.image? ? image_tag(tintuc.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
+			input :socicalshare, hint: f.tintuc.socialshare? ? image_tag(tintuc.socialshare.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
 			columns do
 				column do
 					panel "Home Page" do

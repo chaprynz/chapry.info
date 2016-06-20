@@ -6,8 +6,8 @@
 	<meta property="og:url" content="<%= request.original_url %>"></meta>
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="<%= @post.title %>">
-	<meta property="og:description" content="<%= @post.shortdescription %>">
-	<meta property="og:image" content="<%= @post.image.url %>">
+	<meta property="og:description" content="<%= @post.description %>">
+	<meta property="og:image" content="<%= @post.socialshare.url %>">
 <% end %>
 
 <%= render partial: "shared/header" %>

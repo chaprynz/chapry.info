@@ -13,14 +13,8 @@
 <%= render partial: "shared/header" %>
 <%= render partial: "shared/search" %>
 
-<!-- Desktop -------------------------------------------------------------------------->
-<!-- Desktop -------------------------------------------------------------------------->
-<!-- Desktop -------------------------------------------------------------------------->
-<!-- Desktop -------------------------------------------------------------------------->
-<!-- Desktop -------------------------------------------------------------------------->
-<!-- Desktop -------------------------------------------------------------------------->
-
-<!-- TOP LONG AD DESKTOP-->
+<!-- DESKTOP -->
+<!-- TOP AD DESKTOP-->
 <div class="w3-dark-grey w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px;margin-bottom:10px">
@@ -28,7 +22,7 @@
 		</div>
 	</div>
 </div>
-<!-- A HOT NEWS DESKTOP-->
+<!-- A DESKTOP-->
 <div class="w3-container w3-hide-medium w3-hide-small w3-animate-opacity">
   <% @tintucs.each do |tintuc| %>
 	  <% if tintuc.a %>
@@ -46,8 +40,7 @@
   <% end %>
 </div>
 
-
-<!-- CATEGORY TABS DESKTOP-->
+<!-- TOPMENU DESKTOP-->
 <%= render partial: "shared/categorytab" %>
 
 <!-- FACEBOOK LIKE-->
@@ -61,7 +54,7 @@
 	</div>	
 </div>
 
-<!-- B DAILY NEWS DESKTOP-->
+<!-- B DESKTOP-->
 <div style="max-width:1260px;margin:auto" class="w3-hide-medium w3-hide-small w3-main" >
 	<div style="margin-left:50px" class="w3-container">
 		<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
@@ -85,7 +78,7 @@
 	</div>
 </div>
 
-<!-- C VIDEO DESKTOP-->
+<!-- C DESKTOP-->
 <div class="w3-dark-grey w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
@@ -111,7 +104,7 @@
 	</div>
 </div>
 
-<!-- D QUIZ DESKTOP-->
+<!-- D DESKTOP-->
 <div class="w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
@@ -137,7 +130,7 @@
 	</div>
 </div>
 
-<!-- MIDDLE LONG AD-->
+<!-- MIDDLE AD-->
 <div class="w3-light-blue w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px">
@@ -146,7 +139,7 @@
 	</div>
 </div>
 
-<!-- E VOCABULARY DESKTOP-->
+<!-- E DESKTOP-->
 <div class="w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
@@ -172,7 +165,7 @@
 	</div>
 </div>
 
-<!-- F SONG DESKTOP-->
+<!-- F DESKTOP-->
 <div class="w3-dark-white w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
@@ -198,7 +191,7 @@
 	</div>
 </div>
 
-<!-- G GRAMMAR DESKTOP-->
+<!-- G DESKTOP-->
 <div class="w3-dark-white w3-hide-medium w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px" class="w3-container">
@@ -252,23 +245,19 @@
 	</div>
 </div>
 
-<!-- ipad ------------------------------------------------------------------------------------------->
-<!-- ipad ------------------------------------------------------------------------------------------->
-<!-- ipad ------------------------------------------------------------------------------------------->
-<!-- ipad ------------------------------------------------------------------------------------------->
-
-<!-- TOP LONG AD IPAD -->
+<!-- IPAD-->
+<!-- TOP AD IPAD -->
 <div class="w3-dark-grey w3-hide-large w3-hide-small w3-main">
 	<div style="margin-left:50px">
 		<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+6.png"  style="width:100%">	
 	</div>
 </div>
 
-<!-- HOT TOP NEWS IPAD -->
+<!-- A IPAD -->
 <div class="w3-hide-large w3-hide-small w3-black w3-container">
 	<div style="margin-left:50px" class="w3-container w3-hide-large w3-hide-small w3-animate-opacity">
 	  <% @tintucs.each do |tintuc| %>
-		  <% if tintuc.ipada %>
+		  <% if tintuc.ipadhome %>
 		  <%= link_to tintuc do %>
 		  	<div class="w3-col m12 ">
 				<div class="w3-display-container">
@@ -284,21 +273,23 @@
 	</div>
 </div>
 
-<!-- CATEGORY TABS IPAD -->
-<div style="margin-left:50px" class="w3-center w3-hide-large w3-hide-small w3-container">
-	<div class="w3-red w3-round-bottom w3-btn">
-	  	<p><i class="fa fa-home" aria-hidden="true"></i></p>
-	</div>
-	<% @categories.each do |category| %>
-		<% if !category.homelogo? %>
-		<%= link_to category do %>
-			<div class="w3-dark-grey w3-btn">
-	  			<p><%= category.name %></p>
-			</div>
-		<% end %>
-		<% end %>
-	<% end %>
+<!-- TOPMENU IPAD -->
+<div style="font-family: 'Raleway', sans-serif;margin-left:50px" class="cartab w3-center w3-hide-large w3-hide-small w3-container">
+	<%= link_to "Home", root_path, class: "w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Video", video_path, class: "w3-dark-grey w3-btn" %>
+	
+	<%= link_to "Tin Tức", news_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Từ Vựng", tuvung_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Trò Chơi", trochoi_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Âm Nhạc", baihat_path, class: "w3-dark-grey w3-btn" %>
+		
+	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-dark-grey w3-btn" %>
 </div>
+	
 
 <!-- FACEBOOK LIKE IPAD -->
 <div class="w3-hide-large w3-hide-small w3-container">
@@ -311,7 +302,7 @@
 	</div>	
 </div>
 
-<!-- B DAILY NEWS IPAD -->
+<!-- B IPAD -->
 <div style="margin-left:50px" class="w3-hide-large w3-hide-small w3-container">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<% @tintucs.each do |tintuc| %>
@@ -333,7 +324,7 @@
 	<% end %>
 </div>
 
-<!-- C VIDEOS IPAD -->
+<!-- C IPAD -->
 <div class="w3-black w3-container w3-hide-large w3-hide-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.c %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<div style="margin-left:50px" class="w3-container">
@@ -356,7 +347,7 @@
 	</div>
 </div>
 
-<!-- D QUIZ IPAD -->
+<!-- D IPAD -->
 <div class="w3-container w3-hide-large w3-hide-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.d %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<div style="margin-left:50px" class="w3-container">
@@ -379,7 +370,7 @@
 	</div>
 </div>
 
-<!-- MIDDLE LONG AD-->
+<!-- MIDDLE AD-->
 <div class="w3-hide-large w3-hide-small w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div style="margin-left:50px;font-family: 'Raleway', sans-serif" class="w3-center w3-container"><div style="font-size:1.4rem">Tài Trợ <button class="w3-btn w3-dark-grey w3-small w3-round w3-margin">Học Tiếng Anh </button></div></div>
@@ -389,7 +380,7 @@
 	</div>
 </div>
 
-<!-- E TU VUNG IPAD -->
+<!-- E IPAD -->
 <div class="w3-container w3-hide-large w3-hide-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.e %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<div style="margin-left:50px" class="w3-container">
@@ -412,7 +403,7 @@
 	</div>
 </div>
 
-<!-- F SONG IPAD -->
+<!-- F IPAD -->
 <div class="w3-container w3-hide-large w3-hide-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.f %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<div style="margin-left:50px" class="w3-container">
@@ -435,12 +426,35 @@
 	</div>
 </div>
 
-<!-- G NGU PHAP IPAD -->
+<!-- G IPAD -->
 <div class="w3-container w3-hide-large w3-hide-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.g %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<div style="margin-left:50px" class="w3-container">
 		<% @tintucs.each do |tintuc| %>
 			<% if tintuc.g %>
+				<%= link_to tintuc do %>
+					<div class="w3-col m3">
+						<div class="w3-margin-right">
+							<div class=" w3-display-container">
+								<%= image_tag tintuc.image.url, style: "width:100%" %>
+							</div>
+							<div style="min-height:136px;line-height:1.2;font-size:14px" class="w3-container">
+			  					<p><%= tintuc.title %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<!-- H IPAD -->
+<div class="w3-container w3-hide-large w3-hide-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.h %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<div style="margin-left:50px" class="w3-container">
+		<% @tintucs.each do |tintuc| %>
+			<% if tintuc.h %>
 				<%= link_to tintuc do %>
 					<div class="w3-col m3">
 						<div class="w3-margin-right">
@@ -487,20 +501,16 @@
 	</div>
 </div>
 
-<!-- phone ------------------------------------------------------------------------------------------->
-<!-- phone ------------------------------------------------------------------------------------------->
-<!-- phone ------------------------------------------------------------------------------------------->
-<!-- phone ------------------------------------------------------------------------------------------->
-
-<!-- LONG AD TOP PHONE-->
+<!-- PHONE -->
+<!-- TOP AD PHONE-->
 <div style="margin-top:50px" class="w3-padding w3-dark-grey w3-hide-large w3-hide-medium w3-main">
 	<img src="https://s3-ap-southeast-1.amazonaws.com/chaprycms/Google+Adsense/add+7.jpg"  style="width:100%">	
 </div>
 
-<!-- TOP HOT NEW PHONE-->
+<!-- A PHONE-->
 <div class="w3-container w3-hide-large w3-hide-medium w3-animate-opacity">
   <% @tintucs.each do |tintuc| %>
-	  <% if tintuc.ipada %>
+	  <% if tintuc.ipadhome %>
 		  <%= link_to tintuc do %>
 		  	<div class="w3-col m12 ">
 				<div class="w3-display-container">
@@ -515,20 +525,21 @@
   <% end %>
 </div>
 
-<!-- CATEGORY TABS PHONE-->
-<div class="w3-hide-large w3-hide-medium w3-container">
-	<div class="w3-red w3-round-bottom w3-tiny w3-margin-bottom w3-btn">
-	  	<p>Trang Chủ</p>
-	</div>
-	<% @categories.each do |category| %>
-		<% if !category.homelogo? %>
-		<%= link_to category do %>
-			<div class="w3-dark-grey w3-tiny w3-margin-bottom w3-btn">
-	  			<p><%= category.name %></p>
-			</div>
-		<% end %>
-		<% end %>
-	<% end %>
+<!-- TOPMENU PHONE-->
+<div style="font-family: 'Raleway', sans-serif" class="cartab w3-hide-large w3-hide-medium w3-container">
+	<%= link_to "Home", root_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+	
+	<%= link_to "Video", video_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+	
+	<%= link_to "Tin Tức", news_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Từ Vựng", tuvung_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Trò Chơi", trochoi_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Âm Nhạc", baihat_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-dark-grey w3-margin-bottom w3-btn" %>
 </div>
 
 <!-- FACEBOOK LIKE PHONE-->
@@ -542,7 +553,7 @@
 	</div>	
 </div>
 
-<!-- A DAILY NEWS PHONE-->
+<!-- B PHONE-->
 <div class="w3-hide-medium w3-hide-large w3-container">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.b %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<% @tintucs.each do |tintuc| %>
@@ -562,7 +573,7 @@
 	<% end %>
 </div>
 
-<!-- VIDEOS PHONE-->
+<!-- C PHONE-->
 <div class="w3-black w3-hide-large w3-hide-medium w3-container w3-padding-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.c %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<% @tintucs.each do |tintuc| %>
@@ -581,7 +592,7 @@
 	<% end %>
 </div>
 
-<!-- QUIZ PHONE-->
+<!-- D PHONE-->
 <div class="w3-hide-large w3-hide-medium w3-container w3-padding-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.d %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<% @tintucs.each do |tintuc| %>
@@ -600,7 +611,7 @@
 	<% end %>
 </div>
 
-<!-- MIDDLE LONG AD-->
+<!-- MIDDLE AD-->
 <div class="w3-hide-large w3-hide-medium w3-main">
 	<div style="max-width:1260px;margin:auto" class="w3-container">
 		<div>
@@ -609,7 +620,7 @@
 	</div>
 </div>
 
-<!-- VOCABULARY PHONE-->
+<!-- E PHONE-->
 <div class="w3-black w3-hide-large w3-hide-medium w3-container w3-padding-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.e %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<% @tintucs.each do |tintuc| %>
@@ -628,7 +639,7 @@
 	<% end %>
 </div>
 
-<!-- SONGS PHONE-->
+<!-- F PHONE-->
 <div class="w3-black w3-hide-large w3-hide-medium w3-container w3-padding-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.f %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<% @tintucs.each do |tintuc| %>
@@ -647,11 +658,30 @@
 	<% end %>
 </div>
 
-<!-- NGU PHAP PHONE-->
+<!-- G PHONE-->
 <div class="w3-black w3-hide-large w3-hide-medium w3-container w3-padding-small">
 	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.g %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
 	<% @tintucs.each do |tintuc| %>
 		<% if tintuc.g %>
+		<%= link_to tintuc do %>
+			<div style="margin-bottom:10px" class="w3-container">
+				<div  class="w3-col s4 m4 ">
+  					<%= image_tag tintuc.image.url, style: "width:100%" %>
+				</div>
+				<div style="min-height:100px;line-height:1.2;font-size:14px;padding-left:10px;" class=" w3-col s8 m8  w3-container">
+				  <p><%= tintuc.title %></p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	<% end %>
+</div>
+
+<!-- H PHONE-->
+<div class="w3-black w3-hide-large w3-hide-medium w3-container w3-padding-small">
+	<div style="font-family: 'Raleway', sans-serif" class="w3-container"><% @categories.each do |category| %><% if category.h %><%= link_to category do %><div style="font-size:1.4rem"><%= category.shortname %> <button class="w3-btn w3-blue w3-small w3-round w3-margin">xem tất cả <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button></div><% end %><% end %><% end %></div>
+	<% @tintucs.each do |tintuc| %>
+		<% if tintuc.h %>
 		<%= link_to tintuc do %>
 			<div style="margin-bottom:10px" class="w3-container">
 				<div  class="w3-col s4 m4 ">

@@ -6,8 +6,8 @@
 	<meta property="og:url" content="<%= request.original_url %>"></meta>
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="<%= @tintuc.title %>">
-	<meta property="og:description" content="<%= @tintuc.shortdescription %>">
-	<meta property="og:image" content="<%= @tintuc.image.url %>">
+	<meta property="og:description" content="<%= @tintuc.description %>">
+	<meta property="og:image" content="<%= @tintuc.socialshare.url %>">
 <% end %>
 
 <%= render partial: "shared/header" %>
