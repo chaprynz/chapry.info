@@ -28,7 +28,27 @@
 		</div>
 	</div>
 </div>
-<%= render partial: "shared/categorytab" %>
+
+<!-- CATEGORY TABS DESKTOP-->
+<div style="font-family: 'Raleway', sans-serif" class="w3-black w3-hide-medium w3-hide-small w3-container">
+	<div style="max-width:1260px;margin:auto" class="w3-conntainer">
+        <div style="margin-left:50px">
+        	<%= link_to "Home", root_path, class: "w3-hover-blue w3-padding  w3-btn" %>
+        	
+        	<%= link_to "Video", video_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        	
+        	<%= link_to "Tin Tức", news_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Từ Vựng", tuvung_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Trò Chơi", trochoi_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Âm Nhạc", baihat_path, class: "w3-hover-blue w3-padding w3-btn" %>
+    
+        	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        </div>	
+    </div>	
+</div>
 
 <!-- MAIN BODY-->
 <div style="max-width:1260px;margin:auto" class="w3-hide-medium w3-hide-small w3-main">
@@ -87,6 +107,26 @@
 </div>
 
 <!-- CATEGORY TABS IPAD-->
+<div style="font-family: 'Raleway', sans-serif" class="w3-black w3-hide-large w3-hide-small w3-container">
+	<div style="max-width:1260px;margin:auto" class="w3-conntainer">
+        <div style="margin-left:50px">
+        	<%= link_to "Home", root_path, class: "w3-hover-blue w3-padding  w3-btn" %>
+        	
+        	<%= link_to "Video", video_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        	
+        	<%= link_to "Tin Tức", news_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Từ Vựng", tuvung_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Trò Chơi", trochoi_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Âm Nhạc", baihat_path, class: "w3-hover-blue w3-padding w3-btn" %>
+    
+        	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        </div>	
+    </div>	
+</div>
+
 
 <!-- MAIN BODY-->
 <div style="max-width:1260px;margin:auto" class="w3-hide-large w3-hide-small w3-main">
@@ -144,6 +184,21 @@
 </div>
 
 <!-- CATEGORY TABS PHONE-->
+<div style="font-family: 'Raleway', sans-serif" class="w3-hide-large w3-hide-medium w3-container">
+	<%= link_to "Home", root_path, class: "w3-margin-bottom w3-btn" %>
+	
+	<%= link_to "Video", video_path, class: "w3-margin-bottom w3-btn" %>
+	
+	<%= link_to "Tin Tức", news_path, class: "w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Từ Vựng", tuvung_path, class: "w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Trò Chơi", trochoi_path, class: "w3-margin-bottom w3-btn" %>
+		
+	<%= link_to "Âm Nhạc", baihat_path, class: "w3-margin-bottom w3-btn" %>
+
+	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-margin-bottom w3-btn" %>
+</div>
 
 <!-- MAIN BODY-->
 <div class="w3-hide-large w3-hide-medium w3-main">
