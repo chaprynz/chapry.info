@@ -14,6 +14,7 @@ ActiveAdmin.register Post do
 	index do 
 		column :title
 		column :subcategory
+		column :tag
 		actions
 	end
 
