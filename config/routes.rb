@@ -17,7 +17,9 @@ Rails.application.routes.draw do
       end
       
       resources :tintuc
+      resources :post
     
+    get "/sitemap" => "post#sitemap", format: :xml, as: :sitemap
     
     root "category#index"
    
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
     get '/trochoi' => 'category#trochoi'
     get '/baihat' => 'category#baihat'
     get '/nguphap' => 'category#nguphap'
+   
     
 
 end

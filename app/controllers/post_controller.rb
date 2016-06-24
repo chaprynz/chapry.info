@@ -6,4 +6,7 @@ class PostController < ApplicationController
   	@categories = Category.all
   end
 
+  def sitemap
+    @posts = Post.all
+  end
 end
