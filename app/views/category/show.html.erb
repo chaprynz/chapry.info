@@ -11,7 +11,6 @@
 <% end %>
 
 <%= render partial: "shared/header" %>
-<%= render partial: "shared/search" %>
 
 <!-- DESKTOP -------------------------------------------------------------------------->
 <!-- TOP AD DESKTOP-->
@@ -125,19 +124,19 @@
 
 <!-- TOPMENU IPAD -->
 <div style="font-family: 'Raleway', sans-serif;margin-left:50px" class="cartab w3-center w3-hide-large w3-hide-small w3-container">
-	<%= link_to "Home", root_path, class: "w3-dark-grey w3-btn" %>
-	
-	<%= link_to "Video", video_path, class: "w3-dark-grey w3-btn" %>
-	
-	<%= link_to "Tin Tức", news_path, class: "w3-dark-grey w3-btn" %>
-		
-	<%= link_to "Từ Vựng", tuvung_path, class: "w3-dark-grey w3-btn" %>
-		
-	<%= link_to "Trò Chơi", trochoi_path, class: "w3-dark-grey w3-btn" %>
-		
-	<%= link_to "Âm Nhạc", baihat_path, class: "w3-dark-grey w3-btn" %>
-		
-	<%= link_to "Ngữ Pháp", nguphap_path, class: "w3-dark-grey w3-btn" %>
+	<%= link_to "Từ Vựng", root_path, class: "w3-hover-blue w3-padding  w3-btn" %>
+        	
+        	<%= link_to "Luyện Nghe", video_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        	
+        	<!--<%= link_to "Tin Tức", news_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Luyện Nghe", tuvung_path, class: "w3-hover-blue w3-padding w3-btn" %>-->
+        		
+        	<%= link_to "Bài Hát", trochoi_path, class: "w3-hover-blue w3-padding w3-btn" %>
+        		
+        	<%= link_to "Giải trí", baihat_path, class: "w3-hover-blue w3-padding w3-btn" %>
+    
+        	<%= link_to "Phát Âm", nguphap_path, class: "w3-hover-blue w3-padding w3-btn" %>
 </div>
 
 <!-- FACEBOOK LIKE-->
