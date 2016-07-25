@@ -46,7 +46,7 @@
 <div style="max-width:600px;margin:auto" class="w3-container w3-hide-medium w3-hide-small w3-animate-opacity">
   <% @tintucs.each do |tintuc| %>
 	  <% if tintuc.musica %>
-		  <%= link_to tintuc do %>
+		  <%= link_to [tintuc.category, tintuc] do %>
 		  	<div class="w3-contaner">
 				<div class="w3-display-container">
 					<%= image_tag tintuc.image.url, style: "width:100%" %>
@@ -130,7 +130,7 @@
 	<div class="w3-container w3-hide-large w3-hide-small w3-animate-opacity">
 	  <% @tintucs.each do |tintuc| %>
 		  <% if tintuc.musica %>
-		  <%= link_to tintuc do %>
+		  <%= link_to [tintuc.category, tintuc] do %>
 		  	<div class="w3-col m12 ">
 				<div class="w3-display-container">
 					<%= image_tag tintuc.image.url, style: "width:100%" %>
@@ -160,7 +160,7 @@
 <div class="w3-margin-left w3-hide-large w3-hide-small w3-container">
 	<% @tintucs.each do |tintuc| %>
 		<% if tintuc.musicb %>
-		<%= link_to tintuc do %>
+		<%= link_to [tintuc.category, tintuc] do %>
 			<div class="w3-col m3">
 				<div class="w3-white w3-margin-right content">
 					<div class=" w3-display-container">
@@ -204,7 +204,7 @@
 	<div class="w3-container w3-hide-large w3-hide-medium w3-animate-opacity">
 	  <% @tintucs.each do |tintuc| %>
 		  <% if tintuc.musica %>
-		  <%= link_to tintuc do %>
+		  <%= link_to [tintuc.category, tintuc] do %>
 		  	<div class="w3-col m12 ">
 				<div class="w3-display-container">
 					<%= image_tag tintuc.image.url, style: "width:100%" %>
@@ -233,7 +233,7 @@
 <div class="w3-hide-medium w3-hide-large w3-container">
 	<% @tintucs.each do |tintuc| %>
 		<% if tintuc.musicb %>
-		<%= link_to tintuc do %>
+		<%= link_to [tintuc.category, tintuc] do %>
 			<div class="w3-col w3-padding-small s6">
 				<div class="w3-container">
 					<%= image_tag tintuc.image.url, style: "width:100%" %>
